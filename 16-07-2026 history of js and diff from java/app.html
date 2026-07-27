@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- head is to set browser -->
+    <title>Java Script </title>
+    <!-- way 1 of writing java script  Internal Java script in this we write code in head tag of html -->
+    <!-- way 2 of writing java script  External Java script in thi we create seprate file and write js code -->
+    <!--  we can execute js by using node and browser  -->
+    <!-- we must add script in body after html because html is executed top to botton so js will search for element whihc dont exit  -->
+    <!-- if we want to place script in head or top of body tag then we can use async(belong to js ) and defer(belong to html , html will  not execuste js it will first execute body tag and ignore js ) -->
+    <!-- async have least properties then sync so first sync (html) will eecute  -->
+    <!-- Dom manipulation will not work when we place script at top so we need to place script at bottom , therefore place in botton or use defer or async  -->
+
+</head>
+
+<body>
+
+    <H1>Java Script </H1>
+
+    <script>
+
+        console.log("Java Script is good for bad mental health ")
+    </script>
+    <script src="./app.js"></script>
+
+
+</body>
+
+</html>

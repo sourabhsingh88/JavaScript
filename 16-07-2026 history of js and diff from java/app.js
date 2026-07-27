@@ -1,0 +1,1 @@
+console.log("hello you this is external java script ")    
