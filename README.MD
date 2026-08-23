@@ -23,7 +23,7 @@
 15. [⚡ IIFE (Immediately Invoked Function Expression)](#15--iife-immediately-invoked-function-expression)
 16. [🎯 Higher Order Functions (HOF)](#16--higher-order-functions-hof)
 17. [📞 Callback Functions](#17--callback-functions)
-18. [🪆 Nested Functions & Closures](#18--nested-functions--closures)
+18. [🪆 Nested Functions & Closures](#18--nested-functions--closures)/
 19. [🧠 Execution Context & Call Stack](#19--execution-context--call-stack)
 20. [🔡 Strings & String Methods](#20--strings--string-methods)
 21. [🎤 Tricky Interview Questions](#21--tricky-interview-questions)
@@ -32,7 +32,7 @@
 
 ---
 
-## 1. 🧩 What is JavaScript?
+## 1. 🧩 What is  JavaScript?
 
 JavaScript is a **scripting / high-level programming language** used to make websites **interactive and dynamic**.
 
