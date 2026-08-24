@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        section {
+            width: 70%;
+            height: 70%;
+            background-color: rgb(112, 8, 248);
+            cursor: cell;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Event Propagation</h1>
+    <div>
+        <section>
+            <button>Button</button>
+        </section>
+    </div>
+
+    <script>
+        let div = document.querySelector('div')
+        let section = document.querySelector('section')
+        let btn = document.querySelector('button')
+
+
+        div.addEventListener('click' , (e)=> {
+            console.log("You clicked on div ")
+            e.stopPropagation() ;  // this will stop the propagation event bubling
+            //  will not allow to go to the parent from target  capturing must be false => false
+        } 
+        , false  // will convert this from default event bubbling to event capturing 
+     )
+        
+        section.addEventListener('click' , (e)=> {
+            console.log("You clicked on section ")
+             e.stopPropagation() ;  // this will stop the propagation event bubling
+            //  will not allow to go to the parent from target capturing must be false => false
+        }
+         ,false  // will convert this from default event bubbling to event capturing 
+        )
+
+        
+        btn.addEventListener('click' , (e)=> {
+            console.log("You clicked on button ")
+             e.stopPropagation() ;  // this will stop the propagation event bubling
+            //  will not allow to go to the parent from target capturing must be false => false
+        } 
+        , false   // will convert this from default event bubbling to event capturing 
+    )
+    </script>
+</body>
+
+</html>

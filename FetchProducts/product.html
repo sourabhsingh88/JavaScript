@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Product Store</title>
+    <style>
+        #products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .card {
+            border: 1px solid #390606;
+            width: 100px;
+            height: 200PX;
+            padding: 15px;
+            text-align: center;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+        }
+
+        .card img {
+            width: 100px;
+            height: 100px;
+            /* border: 1px solid #bcaeae; */
+            background-color: rgba(244, 242, 239, 0.592);
+            object-fit: contain;
+        }
+
+        .card:hover {
+            transform: translateY(1px);
+            box-shadow: 0 8px 20px rgba(15, 116, 182, 0.25);
+        }
+
+        .card h4 {
+            height: 45px;
+            overflow: hidden;
+
+            /* margin: 10px 0; */
+            font-size: 15px;
+        }
+
+        .card p {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="products"></div>
+
+    <script src="./product.js"></script>
+</body>
+
+</html>

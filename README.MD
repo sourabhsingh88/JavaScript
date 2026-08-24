@@ -2756,4 +2756,6 @@ test();
 
 ---
 
+
 *End of notes — Fundamentals through BOM, DOM, Events, Promises, async/await, ES6 features, Node.js, Express.js, and a full trainer-style interview Q&A recap with flow diagrams.*
+

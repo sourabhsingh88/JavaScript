@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Event Delegation
+    </h1>
+<script>
+
+//without delegation we are attaching event to each child element and if any new child element is added
+//  then we have to attach event to that new child element as well which is not a good practice
+//attach one event to parent and then use that event to handle all the child elements 
+//and make use of bubling phase
+    
+    let names = ['Sourabh' , 'Sumit' , 'Harsha' , 'Sawan' , 'Aayush']
+
+    let ol = document.createElement('ol')   ;
+
+    names.forEach((el) => {
+        let li = document.createElement('li')
+        li.textContent = el ;
+        ol.append(li) ;
+    //     li.addEventListener('click' ,() => 
+    // {
+    //     console.log(`YOu clicked on ${el}`)
+    // }) // applying event on each child element is not a good practice as it will take more memory and time to load the page
+
+    })
+
+    
+let newli1 = document.createElement('li')
+newli1.textContent = "Shyam"
+ol.append(newli1) ;
+ol.addEventListener('click' , (e) => {
+    if(e.target.tagName === 'LI') {
+        console.log(`You clicked on ${e.target.textContent}`)
+    }
+})
+
+let newli2 = document.createElement('li')
+newli2.textContent = "Ram"
+ol.append(newli2) ;
+    document.body.append(ol)
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        div{
+          display: flex;
+            justify-content: center;
+            text-align: center;
+            border: 2px solid;
+            height: 400px;
+            width: 400px;
+            /* flex-direction: column;     */
+        }
+        form{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;  
+        }
+        input,.btn{
+            height: 30px;
+            width: 300px;
+            margin: 10px;
+        }
+
+    </style>
+</head>
+<body>
+  <h1>form</h1>
+   <div>
+    <form>
+           <input class="name" type="text" placeholder="name">
+           <input class="pass" type="password" placeholder="password">
+           <input class="email" type="email" placeholder="Nayangmail.com">
+           <button class="btn">submit</button>
+        </form>
+    </div> 
+
+<script>
+let name1=document.querySelector(".name")
+name1.addEventListener('change',()=>{
+    if(name1.value.length<3){
+        alert("your name is less than 6 character ")
+    }
+})
+
+let pass=document.querySelector(".pass")
+pass.addEventListener('change',()=>{
+    if(pass.value.length<6){
+        alert("your name is less than 6 character ")
+    }
+})
+let email=document.querySelector(".email")
+// console.log(typeof email.value);
+
+email.addEventListener('change',()=>{
+    let str=email.value;
+   if(!(str.includes("@"))){
+        alert("email is not containing @ ")
+    }
+})
+    </script>
+</body>
+</html>

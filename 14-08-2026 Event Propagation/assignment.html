@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #121212;
+            font-family: sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            padding: 20px;
+        }
+
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        button {
+            color: black;
+            cursor: pointer;
+            height: 40px;
+            border: 1px solid #121212;
+            border-radius: 15%;
+            width: 60px;
+            background: #f0f0f0;
+
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        let btn = document.createElement('Button')
+        btn.textContent = "Dark-Mode"
+        btn.addEventListener('click', () => {
+            if (document.body.classList.contains('dark-mode')) {
+                document.body.classList.remove('dark-mode');
+                btn.textContent = "Dark-Mode";
+            } else {
+                document.body.classList.add('dark-mode');
+                btn.textContent = "Light-Mode"
+            }
+        })
+
+        document.body.append(btn)
+    </script>
+</body>
+
+</html>
