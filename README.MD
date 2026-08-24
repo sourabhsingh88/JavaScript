@@ -1,319 +1,210 @@
-# 🚀 JavaScript Fundamentals — Complete Notes
+# JavaScript — Complete Study Notes (Fundamentals → Node.js/Express)
 
-> 📌 A complete beginner-to-advanced reference covering JS basics, history, variables, scope, hoisting, data types, conditionals, loops, functions, closures, execution context, and strings — with interview-style tricky questions and edge cases.
-
----
-
-## 📑 Table of Contents
-
-1. [🧩 What is JavaScript?](#1--what-is-javascript)
-2. [🕰️ History of JavaScript](#2-️-history-of-javascript)
-3. [⚙️ Characteristics / Features of JavaScript](#3-️-characteristics--features-of-javascript)
-4. [☕ Java vs JavaScript](#4--java-vs-javascript)
-5. [✍️ Ways to Write & Execute JavaScript](#5-️-ways-to-write--execute-javascript)
-6. [🔤 Tokens](#6--tokens)
-7. [📦 Variables: var, let, const](#7--variables-var-let-const)
-8. [🌐 Scopes](#8--scopes)
-9. [🪜 Hoisting & TDZ](#9--hoisting--tdz)
-10. [🔢 Data Types](#10--data-types)
-11. [➗ Operators & Comparisons](#11--operators--comparisons)
-12. [🔀 Conditional Statements](#12--conditional-statements)
-13. [🔁 Looping Statements](#13--looping-statements)
-14. [🧰 Functions](#14--functions)
-15. [⚡ IIFE (Immediately Invoked Function Expression)](#15--iife-immediately-invoked-function-expression)
-16. [🎯 Higher Order Functions (HOF)](#16--higher-order-functions-hof)
-17. [📞 Callback Functions](#17--callback-functions)
-18. [🪆 Nested Functions & Closures](#18--nested-functions--closures)
-19. [🧠 Execution Context & Call Stack](#19--execution-context--call-stack)
-20. [🔡 Strings & String Methods](#20--strings--string-methods)
-21. [🎤 Tricky Interview Questions](#21--tricky-interview-questions)
-22. [⚠️ Edge Cases & Points to Remember](#22-️-edge-cases--points-to-remember)
-23. [✅ Quick Revision Cheatsheet](#23--quick-revision-cheatsheet)
+> Interview-ready reference. Read once, understand fully. Corrected and cleaned up from class notes.
 
 ---
 
-## 1. 🧩 What is JavaScript?
+## Table of Contents
 
-JavaScript is a **scripting / high-level programming language** used to make websites **interactive and dynamic**.
-
-- 🌐 It can be used in **Frontend development** (browser) as well as **Backend development** (via Node.js).
-- Without JavaScript, a webpage is just static text and images — JS is what makes buttons respond, forms validate, and pages update without reloading.
-
-> 💡 **Extra Insight:** JavaScript is one of the only languages that runs natively inside every modern web browser — no installation needed by the end user. That's a huge reason for its popularity.
+1. [Introduction & History](#1-introduction-history)
+2. [Characteristics of JavaScript](#2-characteristics-of-javascript)
+3. [Java vs JavaScript](#3-java-vs-javascript)
+4. [Writing & Executing JS](#4-writing-executing-js)
+5. [Tokens](#5-tokens)
+6. [Variables: var, let, const](#6-variables-var-let-const)
+7. [Scopes](#7-scopes)
+8. [Hoisting & TDZ](#8-hoisting-tdz)
+9. [Data Types](#9-data-types)
+10. [Operators & Comparisons](#10-operators-comparisons)
+11. [Conditional Statements](#11-conditional-statements)
+12. [Loops](#12-loops)
+13. [Functions](#13-functions)
+14. [IIFE](#14-iife)
+15. [Higher Order Functions & Callbacks](#15-higher-order-functions-callbacks)
+16. [Closures](#16-closures)
+17. [Execution Context & Call Stack](#17-execution-context-call-stack)
+18. [Strings & String Methods](#18-strings-string-methods)
+19. [Arrays](#19-arrays)
+20. [Objects](#20-objects)
+21. [call(), apply(), bind()](#21-call-apply-bind)
+22. [Math Object](#22-math-object)
+23. [Date Object](#23-date-object)
+24. [BOM (Browser Object Model)](#24-bom-browser-object-model)
+25. [DOM — Selectors, Reading & Manipulating Content](#25-dom-selectors-reading-manipulating-content)
+26. [Events](#26-events)
+27. [Event Propagation & Event Delegation](#27-event-propagation-event-delegation)
+28. [Promises](#28-promises)
+29. [async / await](#29-async-await)
+30. [fetch()](#30-fetch)
+31. [Event Loop: Microtask vs Macrotask Queue](#31-event-loop-microtask-vs-macrotask-queue)
+32. [ES6 Features: Destructuring, Spread & Rest](#32-es6-features-destructuring-spread-rest)
+33. [Shallow Copy vs Deep Copy](#33-shallow-copy-vs-deep-copy)
+34. [Remaining JS Concepts](#34-remaining-js-concepts)
+35. [Node.js Basics](#35-nodejs-basics)
+36. [Express.js Basics](#36-expressjs-basics)
+37. [Quick Interview Cheatsheet](#37-quick-interview-cheatsheet)
+38. [Interview Q&A — All Questions, Answered](#38-interview-qa-all-questions-answered)
 
 ---
 
-## 2. 🕰️ History of JavaScript
+## 1. Introduction & History
 
-In **1995**, websites were very simple — they only showed text and images. There was no interactivity: no popups, no form validation, no animations. These were called **static web pages**.
+**What is JavaScript?**
+A scripting / high-level, interpreted programming language used to make web pages interactive and dynamic. Used for **frontend** (in the browser) and **backend** (via Node.js).
 
-**Netscape Communications** (the company behind the Netscape Navigator browser) wanted websites to behave dynamically — buttons that react, forms that validate, pages that respond to users.
-
-- 👨‍💻 Netscape hired a young engineer named **Brendan Eich**.
-- ⏱️ He created JavaScript in just **10 days**.
-- Why only 10 days? Netscape was in a browser race against Microsoft and urgently needed a scripting language.
-
-**The language's name changed over time:**
-```
-Mocha → LiveScript → JavaScript
-```
-Java was extremely popular in 1995, so the name "JavaScript" was chosen mainly for **marketing purposes** — not because JavaScript is technically related to Java.
-
-**Standardization:**
-- 📜 In **1997**, JavaScript was standardized by **ECMA**. The official name became **ECMAScript (ECMA-262)**.
-- 🎉 In **2015**, **ES6** was released — one of the biggest updates in JavaScript history, making JS far more powerful and modern (introduced `let`, `const`, arrow functions, classes, promises, etc.).
-
-> 📝 **Note:** The current ECMAScript version (as of these notes) is **ES2025**. A new ES version is released every year.
+**History (interview favorite):**
+- **1995** — Websites were static (only text/images). Netscape wanted dynamic behavior.
+- **Brendan Eich** (Netscape) created JS in **10 days**.
+- Name evolution: `Mocha → LiveScript → JavaScript` (renamed for marketing — Java was popular in 1995; JS is **not** derived from Java).
+- **1997** — Standardized by **ECMA** → official name **ECMAScript (ECMA-262)**.
+- **2015** — **ES6 (ES2015)** released: biggest update — `let`, `const`, arrow functions, classes, promises, template literals, etc.
+- A new ECMAScript version releases every year (ES2016, ES2017 … current is ES2025+).
 
 ---
 
-## 3. ⚙️ Characteristics / Features of JavaScript
+## 2. Characteristics of JavaScript
 
-### 1️⃣ Single Threaded
-JavaScript is a single-threaded language — it executes **one operation at a time** on a single thread. A program uses only one call stack to execute instructions.
-> Example: Online banking website OTP validation — one step waits for the previous to finish.
+| # | Feature | Meaning |
+|---|---|---|
+| 1 | **Single-threaded** | One call stack → executes one operation at a time. |
+| 2 | **Dynamically typed** | Variable type is decided at runtime, based on the value assigned. |
+| 3 | **Interpreted** | Code runs line by line (via a JS engine), not compiled ahead of time as a whole. |
+| 4 | **Synchronous by default** | Each statement waits for the previous one to finish — *but* the browser's Web APIs + Event Loop + Callback/Microtask Queue let JS *behave* asynchronously (`setTimeout`, `fetch`, Promises). |
+| 5 | **Loosely / weakly typed** | JS auto-converts types during operations → **type coercion**. |
+| 6 | **Object-based** | Supports objects but not all OOP pillars natively (pre-ES6). |
+| 7 | **Object-oriented (from ES6)** | `class` syntax + prototypal inheritance → supports Encapsulation, Abstraction, Inheritance, Polymorphism. |
 
-### 2️⃣ Dynamically Typed
-The type of a variable is determined **based on the value stored, at runtime** — you don't declare a type upfront.
 ```js
-var a = 10;
-let b = "abc";
-const c = true;
+console.log("122" + 2); // "1222" → string (concatenation)
+console.log("122" - 2); // 120    → number (coercion, - only works numerically)
 ```
 
-### 3️⃣ Interpreted
-JavaScript code is processed **line by line**, rather than compiled all at once beforehand.
-> Example: Like a translator reading a book aloud sentence by sentence, rather than translating the whole book first.
-
-### 4️⃣ Synchronous
-Tasks execute in **sequential order** — each task waits for the previous one to finish before starting.
-> Example: A toll gate or coin box — one vehicle/coin is processed at a time.
-
-> 💡 **Extra Insight:** JavaScript itself is synchronous & single-threaded, but the **browser environment** (Web APIs, Event Loop, Callback Queue) allows it to *appear* asynchronous — that's how things like `setTimeout`, `fetch`, and Promises work without freezing the page.
-
-### 5️⃣ Loosely Typed / Weakly Typed
-JavaScript doesn't attach variables to a specific data type — it can change type as needed during operations.
-```js
-console.log("122" + 2); // "1222"  → string
-console.log("122" - 2); // 120    → number
-```
-> **Type Coercion** is the process by which JavaScript automatically converts one data type into another while performing an operation.
-
-### 6️⃣ Object-Based & 7️⃣ Object-Oriented
-
-| Object-Based | Object-Oriented |
-|---|---|
-| No mandatory classes | Class-based, blueprints mandatory |
-| Objects can be created directly | Objects are created from classes |
-| Supports objects, but **not** all OOP principles | Supports objects and all major OOP principles: Encapsulation, Abstraction, Inheritance, Polymorphism |
-| Does **not** support inheritance (traditionally) | Supports inheritance |
-
-> 📝 **Note:** JavaScript became object-oriented from the **ES6+** version onward, thanks to `class` syntax and prototype-based inheritance.
+> **Type Coercion**: JS automatically converting one data type to another while performing an operation.
 
 ---
 
-## 4. ☕ Java vs JavaScript
-
-A very common interview mix-up — despite the similar name, Java and JavaScript are **unrelated** languages.
+## 3. Java vs JavaScript
 
 | Java | JavaScript |
 |---|---|
-| Programming language | Programming **and** Scripting language |
-| Strictly typed language | Weakly / Loosely typed |
-| Statically typed | Dynamically typed |
-| Runs on JVM | Runs inside a browser / Node.js |
-| Compiled & interpreted language | Interpreted language |
+| Programming language | Programming **and** scripting language |
+| Strictly / statically typed | Weakly / dynamically typed |
+| Runs on the JVM | Runs in a browser or Node.js runtime |
+| Compiled then interpreted (bytecode) | Interpreted (JIT-compiled internally by engines like V8) |
 | Multi-threaded | Single-threaded |
 
+Unrelated languages — same-era naming coincidence only.
+
 ---
 
-## 5. ✍️ Ways to Write & Execute JavaScript
+## 4. Writing & Executing JS
 
-### Ways to Write JS Code
-
-**1) Internal** — using a `<script>` tag inside the HTML file:
+**Ways to write JS:**
 ```html
+<!-- Internal -->
 <script>
-  console.log("We Love Javascript");
+  console.log("Hello");
 </script>
+
+<!-- External -->
+<script src="./app.js"></script>
 ```
 
-**2) External** — linking a separate `.js` file:
-```html
-<script src="./fileName.js"></script>
-```
+**Ways to execute:**
+- In the browser (open HTML file, check browser console).
+- In Node.js from terminal: `node filename.js`
 
-### Ways to Execute a JavaScript File
-1. 🌐 Using an HTML file (open in browser, view via browser console).
-2. 🟢 Using **Node.js** — run in terminal: `node filename`
+**Why put `<script>` at the end of `<body>`?**
+Browser parses HTML top-to-bottom. A script placed early may try to access/manipulate DOM elements that don't exist yet → errors or blank behavior. Placing it at the bottom guarantees the DOM is ready first.
 
-### Why Is JavaScript Written at the End of the `<body>` Tag?
-Because the browser reads HTML **top to bottom, line by line**. If JS loads *before* the HTML content:
-- It may try to access elements that don't exist yet.
-- It may try to manipulate the DOM before it's created.
-- This can cause errors or blank pages.
-
-Placing `<script>` at the bottom of `<body>` ensures the HTML is fully loaded first.
-
-### Why Not Put JS in `<head>`?
-You *can*, but only if you add `defer` or `async`:
+**Using `<head>` instead — `defer` vs `async`:**
 ```html
 <script src="app.js" defer></script>
-<!-- or -->
 <script src="app.js" async></script>
 ```
-Without `defer` or `async`, a script placed in `<head>` **blocks/delays** the rendering of the entire page.
-
-> 💡 **Extra Insight:** `defer` scripts run **in order**, after HTML parsing is complete. `async` scripts run **as soon as they're downloaded**, which can be *before* parsing finishes — so `async` is best for independent scripts (like analytics), and `defer` is best when your script depends on the DOM or other scripts.
-
----
-
-## 6. 🔤 Tokens
-
-**Tokens** are the smallest meaningful units of a JavaScript program. The JavaScript engine recognizes them during the **lexical analysis (tokenization)** phase.
-
-> **Lexical analysis (tokenization) phase:** The phase where the JS engine reads source code character by character and converts it into tokens.
-
-### Types of Tokens
-- 🔑 Keywords
-- 🏷️ Identifiers
-- ➕ Operators
-- 🔢 Literals
-- 🔡 Separators
-- 💬 Comments
-- 🧰 Functions
-
-### Keywords
-Reserved words with a predefined meaning, used to declare variables, functions, or classes.
-> Examples: `var`, `let`, `const`, `function`, `class`, etc.
-
-- Keywords **cannot** be used as variable names.
-- Keywords are **case-sensitive**.
-- Their behavior is fixed by JavaScript.
-
-### Identifiers
-The name given to a variable, function, or class to identify it uniquely in a program.
-
-**Rules for Identifiers:**
-- Cannot start with a number.
-- Cannot contain spaces.
-- Cannot use special symbols except `$` and `_`.
-- Cannot be a JavaScript keyword.
+- **`defer`** — downloads in background, executes **in order**, only **after** HTML parsing completes. Use when the script needs the DOM or depends on other scripts.
+- **`async`** — downloads in background, executes **as soon as it's ready** (may interrupt parsing, order not guaranteed). Use for independent scripts (e.g., analytics).
+- Without either, a `<head>` script **blocks** page rendering until it finishes downloading + executing.
 
 ---
 
-## 7. 📦 Variables: var, let, const
+## 5. Tokens
 
-### `var`
-- A variable declaration keyword used before ES6.
-- Declares **function-scoped** or **globally-scoped** variables.
-- Using `var` you can: declare, initialise, declare & initialise, redeclare, reinitialise, and redeclare & initialise a variable.
+**Tokens** = smallest meaningful units the JS engine recognizes during **lexical analysis (tokenization)** — reading source code character by character and converting it into tokens.
 
-```js
-var a;       // declaration
-a = 20;      // initialisation
+**Types:** Keywords, Identifiers, Operators, Literals, Separators, Comments, Functions.
 
-var b = 30;  // declare & initialise together
-console.log(b);
+- **Keywords** — reserved words with fixed meaning (`var`, `let`, `function`, `class`…). Cannot be used as variable names. Case-sensitive.
+- **Identifiers** — names given to variables/functions/classes.
+  - Cannot start with a number.
+  - No spaces.
+  - Only `$` and `_` allowed as special characters.
+  - Cannot be a reserved keyword.
 
-var a = 200; // redeclare & reinitialise — totally allowed
-console.log(a);
-```
+---
 
-### `let`
-- An ES6 keyword used to declare **block-scoped** variables.
-- Using `let` you can: declare, initialise, declare & initialise, and reinitialise.
-- ❌ **Redeclaring** the same variable with `let` in the same scope is **not allowed**.
-
-```js
-let a;      // declaration
-a = 20;     // initialisation
-
-let b = 30; // declare & initialise
-console.log(b);
-
-a = 500;    // reinitialise — allowed
-console.log(a);
-
-// let a;   // ❌ Error: 'a' has already been declared
-```
-
-### `const`
-- Declares **block-scoped constants** whose value **cannot be reassigned**.
-- Using `const` you can **only** declare & initialise **together, at the same time** — you cannot declare first and initialise later.
-
-```js
-const b = 30;   // must declare + initialise together
-console.log(b);
-
-// const a;     // ❌ Error: Missing initializer in const declaration
-// b = 500;     // ❌ Error: Assignment to constant variable
-```
-
-### var vs let vs const — Quick Table
+## 6. Variables: var, let, const
 
 | Feature | `var` | `let` | `const` |
 |---|---|---|---|
 | Scope | Function / Global | Block | Block |
-| Redeclare | ✅ Allowed | ❌ Not Allowed | ❌ Not Allowed |
-| Reinitialise | ✅ Allowed | ✅ Allowed | ❌ Not Allowed |
-| Must initialise at declaration? | No | No | ✅ Yes (mandatory) |
-| Hoisted? | ✅ Yes (initialised as `undefined`) | ✅ Yes (in TDZ) | ✅ Yes (in TDZ) |
+| Redeclare (same scope) | ✅ Allowed | ❌ Error | ❌ Error |
+| Reinitialize (reassign) | ✅ Allowed | ✅ Allowed | ❌ Error |
+| Must initialize at declaration | No | No | ✅ Yes, mandatory |
+| Hoisted | ✅ Yes → initialized as `undefined` | ✅ Yes → in TDZ | ✅ Yes → in TDZ |
 
-> 💡 **Extra Insight:** `const` doesn't mean "immutable value" — it means the **binding** (the variable name itself) can't be reassigned. Objects and arrays declared with `const` can still have their **contents** changed!
+```js
+// var
+var a;        // declare
+a = 20;       // initialize
+var a = 200;  // redeclare + reinitialize → totally fine
+
+// let
+let b;        // declare
+b = 30;       // initialize
+b = 500;      // reinitialize → fine
+// let b;     // ❌ Error: already declared
+
+// const
+const c = 30; // must declare + initialize together
+// const d;   // ❌ Error: missing initializer
+// c = 40;    // ❌ Error: assignment to constant variable
+```
+
+> **Interview trap:** `const` does **not** make a value immutable — it locks the **binding** (variable name), not the contents.
 ```js
 const arr = [1, 2, 3];
-arr.push(4);       // ✅ Allowed — mutating contents, not reassigning
-console.log(arr);  // [1, 2, 3, 4]
-
-// arr = [5, 6];   // ❌ Error — reassigning the variable itself
+arr.push(4);     // ✅ allowed — mutating contents
+console.log(arr); // [1, 2, 3, 4]
+// arr = [5, 6]; // ❌ Error — reassigning the variable itself
 ```
 
 ---
 
-## 8. 🌐 Scopes
+## 7. Scopes
 
-### Global Scope
-Variables accessible from **anywhere** in the program. Variables declared with `var` (outside any function) belong to global scope.
-```js
-var a = 10; // global scope
-```
+- **Global scope** — `var` declared outside any function; accessible everywhere.
+- **Script scope** — `let` / `const` declared at top level of a file (not inside any block/function).
+- **Function scope** — variables declared inside a function; accessible only inside it.
+- **Block scope** — `let` / `const` inside `{ }`; accessible only inside that block.
 
-### Script Scope
-Variables declared with `let` and `const` at the **top level** of a JS file (or directly inside a `<script>` tag, not inside any block/function).
-```js
-let x = 10;
-const y = 20;
-```
-
-### Function Scope
-Variables declared inside a function are accessible **only inside that function**.
 ```js
 function test() {
   var a = 10;
   let b = 20;
-  const c = 30;
-  console.log(a);
+  console.log(a); // 10
 }
-test();          // 10
-console.log(a);  // ❌ ReferenceError
-```
+test();
+console.log(a); // ❌ ReferenceError
 
-### Block Scope
-Variables declared with `let` and `const` inside `{ }` are accessible **only inside that block**.
-```js
 if (true) {
   let x = 10;
-  const y = 20;
   console.log(x); // 10
-  console.log(y); // 20
 }
-
 console.log(x); // ❌ ReferenceError
-console.log(y); // ❌ ReferenceError
 ```
 
-> ⚠️ **Important:** `var` ignores block scope entirely — a `var` declared inside `{ }` "leaks" out to the enclosing function/global scope.
+> ⚠️ **`var` ignores block scope** — it "leaks" out of `{ }` into the enclosing function/global scope.
 ```js
 {
   var a = 20;
@@ -323,1092 +214,2546 @@ console.log(a); // 20 — accessible outside the block!
 
 ---
 
-## 9. 🪜 Hoisting & TDZ
+## 8. Hoisting & TDZ
 
-### Hoisting
-**Hoisting** is a JavaScript mechanism where variable and function **declarations** are moved to the top of their scope during compilation.
-- Only **declarations** are hoisted, **not initializations**.
-- Hoisting occurs for all three keywords: `var`, `let`, and `const`.
+**Hoisting** — variable/function **declarations** are moved to the top of their scope during the compilation phase. Only declarations are hoisted, not initializations. Happens for `var`, `let`, and `const`.
 
 ```js
-console.log(a); // undefined (var is hoisted & initialised as undefined)
-console.log(b); // ❌ ReferenceError (TDZ)
-console.log(c); // ❌ ReferenceError (TDZ)
+console.log(a); // undefined  → var hoisted & auto-initialized to undefined
+console.log(b); // ❌ ReferenceError → TDZ
+console.log(c); // ❌ ReferenceError → TDZ
 
 var a = 10;
 let b = 20;
 const c = 30;
 ```
 
-### TDZ (Temporal Dead Zone)
-The **Temporal Dead Zone** is the time between a variable's declaration and its initialization, during which accessing the variable causes a `ReferenceError`.
-- TDZ applies **only** to `let` and `const`.
-
-### Why does TDZ occur only in `let`/`const`, not `var`?
-- `var` declarations are hoisted to the top of their scope **and immediately initialised with the value `undefined`**.
-- `let` and `const` are also hoisted, but they are **not** initialised — they exist in memory in an inaccessible state (the TDZ) until the actual line of initialisation is reached.
+**TDZ (Temporal Dead Zone)** — the time between a `let`/`const` variable's hoisting and its actual initialization line. Accessing it during this window throws a `ReferenceError`. TDZ applies **only** to `let` and `const` (not `var`, since `var` is auto-initialized to `undefined` on hoist).
 
 ---
 
-## 10. 🔢 Data Types
+## 9. Data Types
 
-### Checking Types with `typeof`
+**Primitive:** `number`, `string`, `boolean`, `undefined`, `null`, `bigint`, `symbol`
+**Non-primitive (reference):** `object`, `array`, `function`
+
 ```js
-console.log(typeof 10);      // "number"
-console.log(typeof 10n);     // "bigint"
-console.log(typeof "js");    // "string"
-console.log(typeof true);    // "boolean"
-console.log(typeof typeof 10); // "string" (typeof always returns a string)
+console.log(typeof 10);         // "number"
+console.log(typeof 10n);        // "bigint"
+console.log(typeof "js");       // "string"
+console.log(typeof true);       // "boolean"
+console.log(typeof undefined);  // "undefined"
+console.log(typeof null);       // "object" (a long-standing JS bug, memorize this!)
+console.log(typeof typeof 10);  // "string" (typeof always returns a string)
 ```
 
-### `null` vs `undefined`
+**`null` vs `undefined`:**
 
 | | Meaning |
 |---|---|
-| `undefined` | A variable has been declared but **not assigned** a value yet. |
-| `null` | An **intentional absence** of value, explicitly assigned by the programmer. |
+| `undefined` | Variable declared but not yet assigned a value. |
+| `null` | Intentional, explicit "no value" set by the developer. |
 
 ```js
-console.log(null == undefined);   // true  (loose equality — same "emptiness")
-console.log(null === undefined);  // false (different types)
-
+console.log(null == undefined);   // true  → loose equality, both "empty"
+console.log(null === undefined);  // false → different types
 console.log(0 == undefined);      // false
 
-console.log(10 + null);       // 10   (null is treated as 0)
-console.log(10 - null);       // 10
-console.log(10 + undefined);  // NaN  (undefined cannot convert to a number)
+console.log(10 + null);      // 10   → null coerces to 0
+console.log(10 + undefined); // NaN  → undefined cannot convert to a number
 ```
 
-### `NaN` (Not a Number)
+**`NaN` (Not a Number):**
 ```js
-console.log(typeof NaN);  // "number"  (yes, NaN is technically of type number!)
-console.log(NaN == NaN);  // false
-console.log(NaN === NaN); // false     (NaN is never equal to itself)
+console.log(typeof NaN);   // "number" (yes, really)
+console.log(NaN == NaN);   // false — NaN is never equal to itself
+console.log(NaN === NaN);  // false
+// To check: Number.isNaN(value)
 ```
 
-### `==` vs `===`
+**`==` vs `===`:**
 
 | Operator | Name | Behavior |
 |---|---|---|
-| `==` | Loose equality | Compares values **after** type conversion |
-| `===` | Strict equality | Compares both **value and type**, no conversion |
+| `==` | Loose equality | Converts types before comparing |
+| `===` | Strict equality | Compares value **and** type, no conversion |
 
 ```js
-console.log(5 == 5);    // true
-console.log(5 == "5");  // true   (string "5" converted to number 5)
-console.log(5 === "5"); // false  (different types)
+console.log(5 == "5");  // true  → "5" coerced to 5
+console.log(5 === "5"); // false → different types
+```
+> **Best practice:** always prefer `===` / `!==` to avoid unexpected coercion bugs.
+
+---
+
+## 10. Operators & Comparisons
+
+```js
+console.log(2 ** 3);              // 8 → exponentiation
+console.log(10 > 5 ? "yes" : "no"); // ternary → condition ? ifTrue : ifFalse
 ```
 
 ---
 
-## 11. ➗ Operators & Comparisons
+## 11. Conditional Statements
 
-### Exponentiation
 ```js
-console.log(2 ** 3); // 8   (2 to the power of 3)
-```
+// if
+if (age >= 18) { /* ... */ }
 
-### Ternary Operator
-Shorthand for a simple `if-else`.
-```js
-console.log(10 > 5 ? "true" : "false"); // "true"
-```
-**Syntax:** `condition ? valueIfTrue : valueIfFalse`
+// if-else
+if (age >= 18) { /* ... */ } else { /* ... */ }
 
----
+// else-if ladder (checked top to bottom, only ONE branch runs)
+if (marks >= 90) { /* ... */ }
+else if (marks >= 75) { /* ... */ }
+else { /* ... */ }
 
-## 12. 🔀 Conditional Statements
-
-Conditional statements execute different code blocks based on a condition. These statements evaluate to a **boolean** (`true`/`false`) and are also called **decision-making statements**.
-
-### 1) `if` Statement
-Executes code only when the condition is `true`. Used for single condition checking.
-```js
-let age = 19;
-if (age >= 18) {
-  console.log("eligible to cast vote");
-}
-```
-
-### 2) `if-else` Statement
-Provides two possible outputs — one block runs if true, the other if false.
-```js
-let age = 21;
-if (age >= 18) {
-  console.log("eligible to cast vote");
-} else {
-  console.log("not eligible to cast vote");
-}
-```
-
-### 3) `else if` Ladder
-Used when multiple conditions need to be checked. Only one condition executes (checked top to bottom).
-```js
-let marks = 42;
-if (marks >= 90) {
-  console.log("Toppers be like: Teacher's favorite");
-} else if (marks >= 75) {
-  console.log("Parents are happy, Netflix unlocked!");
-} else if (marks >= 60) {
-  console.log("Pass is pass… respect +1");
-} else if (marks >= 35) {
-  console.log("Just passed… God is great!");
-} else {
-  console.log("Fail… see you in supplementary exam!");
-}
-```
-
-### 4) Nested `if`
-An `if` inside another `if` — used for **dependent** conditions.
-```js
-let balance = 5000;
-let amount = 3000;
-
+// nested if — for dependent conditions
 if (balance > 0) {
-  if (amount <= balance) {
-    console.log("Withdraw Successful");
-  } else {
-    console.log("Insufficient Balance");
-  }
+  if (amount <= balance) { /* withdraw */ }
 }
-```
 
-### 5) `switch` Statement
-Used when comparing one value against multiple cases — better readability than a long `else if` chain.
-```js
-let day = 6;
+// switch — better readability for multiple fixed values
 switch (day) {
   case 1:
     console.log("Monday");
-    break;
-  case 6:
-    console.log("Saturday");
-    break;
-  case 7:
-    console.log("Sunday");
     break;
   default:
     console.log("Working Day");
 }
 ```
-> ⚠️ Don't forget `break` — without it, execution **falls through** to the next case(s).
+> ⚠️ Forgetting `break` in `switch` causes **fall-through** — execution continues into the next case(s).
 
 ---
 
-## 13. 🔁 Looping Statements
+## 12. Loops
 
-Looping statements execute the same block of code repeatedly **until a condition becomes false**. Instead of writing the same code again and again, we use loops — this reduces code length.
+| Loop | Use when | Condition checked |
+|---|---|---|
+| `for` | Number of iterations is known | Before each iteration |
+| `while` | Number of iterations unknown | Before each iteration |
+| `do...while` | Must run **at least once** | After each iteration |
 
-### `for` Loop
-Used when the **number of iterations is known in advance**. Initialization, condition, and increment/decrement are all specified together.
-
-**Syntax:**
 ```js
-for (initialization; condition; increment/decrement) {
-  // code to execute
-}
-```
+for (let i = 1; i <= 5; i++) { console.log(i); }
 
-**Example:**
-```js
-for (let i = 1; i <= 5; i++) {
-  console.log(i);
-}
-```
-
-### `while` Loop
-Executes code **as long as a condition is true**. The condition is checked **before** execution — number of iterations is not known in advance. Initialization is done separately, before the loop.
-
-**Syntax:**
-```js
-while (condition) {
-  // code to execute
-}
-```
-
-> ⚠️ **Note:** If you forget to update the loop variable, it causes an **infinite loop**.
-
-**Example:**
-```js
 let i = 1;
-while (i <= 5) {
-  console.log(i);
-  i++;
-}
+while (i <= 5) { console.log(i); i++; }
+
+let j = 1;
+do { console.log(j); j++; } while (j <= 5);
 ```
-
-### `do...while` Loop
-Executes the code **at least once**, even if the condition is false (condition checked **after** execution).
-
-**Syntax:**
-```js
-do {
-  // code to execute
-} while (condition);
-```
-
-**Example:**
-```js
-let i = 1;
-do {
-  console.log(i);
-  i++;
-} while (i <= 5);
-```
-
-### Practice Examples
-
-**Print even numbers from 1–50:**
-```js
-for (let i = 1; i <= 50; i++) {
-  if (i % 2 === 0) {
-    console.log(i);
-  }
-}
-```
-
-**Print the multiplication table of 2:**
-```js
-for (let i = 1; i <= 10; i++) {
-  console.log("2 x " + i + " = " + (2 * i));
-}
-```
+> ⚠️ Forgetting to update the loop variable in `while` causes an **infinite loop**.
 
 ---
 
-## 14. 🧰 Functions
+## 13. Functions
 
-A **function** is a block of reusable code used to perform a specific operation. Instead of writing the same code again and again, we write it once and reuse it. The code block executes only when the function is **called**, and it can be called multiple times to re-execute the same logic.
+A **function** is a reusable block of code that runs when it's **called** (invoked).
 
-### Basic Function Syntax
 ```js
-function functionName() {
-  // code
+function greet() {              // declaration
+  console.log("Hello");         // body
 }
+greet();                        // invocation
 ```
 
-**Example:**
-```js
-function greet() {              // Function Declaration
-  console.log("Hello JavaScript"); // Function body
-}
-greet(); // Function invocation
-```
-
-### Parameters vs Arguments
+**Parameters vs Arguments:**
 
 | Term | Meaning |
 |---|---|
-| **Parameters** | Variables used in the function *definition* — act as placeholders |
-| **Arguments** | The actual values passed during function *invocation* |
+| Parameter | Placeholder variable in the function **definition** |
+| Argument | Actual value passed at **invocation** |
 
 ```js
-function add(a, b) {   // a, b = parameters
-  console.log(a + b);
-}
-add(10, 20);            // 10, 20 = arguments
+function add(a, b) { return a + b; } // a, b = parameters
+add(10, 20);                          // 10, 20 = arguments
 ```
 
-### Default Parameters
-If an argument is missing, it defaults to `undefined` — unless you set a **default parameter value**.
+**Default parameters:**
 ```js
-function sum(x, y = 10) {
-  return x + y;
-}
-console.log(sum(5)); // 15  (y defaults to 10)
+function sum(x, y = 10) { return x + y; }
+console.log(sum(5)); // 15 → y defaults to 10 since not passed
 ```
 
-### `return` Statement
+**`return`:**
 - Sends a value back to the caller.
-- If no value is returned, the function returns `undefined`.
-- **Stops** function execution — code written after `return` will **not** execute.
+- Stops function execution immediately — code after `return` never runs.
+- If nothing is returned, the function returns `undefined`.
 
+**Function types:**
 ```js
-function sum(a, b) {
-  return a + b;
-}
-let result = sum(5, 10);
-console.log(result); // 15
+function fn1() {}             // function declaration — hoisted fully
+const fn2 = function () {};   // function expression — not hoisted (only the var is)
+const fn3 = () => {};         // arrow function — no own `this`, inherits from enclosing scope
 ```
 
 ---
 
-### Types of Functions
+## 14. IIFE
 
-#### 1) Normal / Named Function
-Declared using the `function` keyword and an identifier (name). Invoked using the same identifier followed by `()`.
-- The `arguments` object can be used inside it.
-- 🌟 **Function hoisting is allowed only for normal/named functions.**
+**Immediately Invoked Function Expression** — a function that runs as soon as it's defined, without being called separately. Used to create an isolated scope (avoid polluting global scope).
 
 ```js
+(function () {
+  console.log("Runs immediately");
+})();
+
+(() => {
+  console.log("Arrow IIFE");
+})();
+```
+
+---
+
+## 15. Higher Order Functions & Callbacks
+
+- **Higher Order Function (HOF)** — a function that either **takes another function as an argument** or **returns a function**. Examples: `map`, `filter`, `reduce`, `forEach`.
+- **Callback Function** — a function passed as an argument to another function, to be executed later (after some operation completes).
+
+```js
+function greet(name, callback) {
+  console.log("Hello " + name);
+  callback();
+}
+greet("Sam", () => console.log("Callback executed"));
+```
+
+---
+
+## 16. Closures
+
+A **closure** is formed when an inner (nested) function retains access to its outer function's variables, even **after** the outer function has finished executing.
+
+```js
+function outer() {
+  let count = 0;
+  function inner() {
+    count++;
+    console.log(count);
+  }
+  return inner;
+}
+
+const counter = outer();
+counter(); // 1
+counter(); // 2 → `count` is remembered between calls
+```
+> Closures power patterns like private variables, function factories, and `setTimeout`/event-handler callbacks that need to "remember" data.
+
+---
+
+## 17. Execution Context & Call Stack
+
+**Execution Context** — the environment in which JS code is evaluated and executed. Two main types:
+- **Global Execution Context (GEC)** — created once, when the script starts running.
+- **Function Execution Context (FEC)** — created every time a function is invoked.
+
+Each execution context has two phases:
+1. **Memory / Creation phase** — variables (`var` → `undefined`) and function declarations are hoisted into memory.
+2. **Execution phase** — code runs line by line, values get assigned.
+
+**Call Stack** — a stack (LIFO — Last In, First Out) data structure that tracks execution contexts. The GEC sits at the bottom; every function call pushes a new context on top, and it's popped off once the function returns.
+
+```js
+function a() { b(); }
+function b() { console.log("in b"); }
+a();
+// Stack: GEC → a() → b()  → pops b → pops a → back to GEC
+```
+
+---
+
+## 18. Strings & String Methods
+
+Strings are primitive but have a wrapper object giving them built-in methods (immutable — methods return a **new** string, never modify the original).
+
+| Method | Description | Example |
+|---|---|---|
+| `indexOf(value, startIndex?)` | First occurrence index; `-1` if not found | `"name".indexOf("a")` → `1` |
+| `lastIndexOf(value)` | Last occurrence index (searches right→left); `-1` if not found | `"banana".lastIndexOf("a")` → `5` |
+| `repeat(n)` | Repeats the string `n` times; error on negative n | `"js".repeat(2)` → `"jsjs"` |
+| `startsWith(value)` | Checks if string starts with value; case-sensitive; returns boolean | `"name".startsWith("n")` → `true` |
+| `endsWith(value)` | Checks if string ends with value; case-sensitive; returns boolean | `"name".endsWith("e")` → `true` |
+| `charAt(index)` | Returns char/string at index | `"name".charAt(0)` → `"n"` |
+| `toString()` | Converts other data types into a string; throws error on `null`/`undefined` | `(123).toString()` → `"123"` |
+
+**Reversing a string (classic interview question):**
+```js
+let str = "I am indian";
+
+// reverse word order → "indian am I"
+let byWords = str.split(' ').reverse().join(' ');
+
+// reverse every character → "naidni ma I"
+let byChars = str.split('').reverse().join('');
+```
+
+---
+
+## 19. Arrays
+
+An **array** is a non-primitive, ordered collection that can hold homogeneous or heterogeneous values. Dynamic in length. **Mutable**, and internally stored as an object. Index starts at `0`.
+
+### Creating Arrays
+```js
+// 1. Using literal (preferred)
+let arr = [10, 20, 30];
+
+// 2. Using `new Array()`
+let arr2 = new Array();          // empty array
+let arr3 = new Array(10, 20, 30); // [10, 20, 30]
+
+// ⚠️ gotcha: a single number argument sets LENGTH, not a value
+let arr4 = new Array(5); // creates empty array with length 5, no elements
+```
+
+### Insertion / Modification / Deletion (manual)
+```js
+let a = [];
+a[0] = 10;          // insert
+a[1] = 200;         // modify
+delete a[1];        // deletion → leaves an empty slot (length unchanged)
+```
+
+### Array Mutating Methods (modify the original array)
+
+| Method | Description |
+|---|---|
+| `push(...items)` | Adds element(s) to the **end**. Returns new length. |
+| `pop()` | Removes the **last** element. Returns the removed element (`undefined` if empty). No args. |
+| `unshift(...items)` | Adds element(s) to the **start**. Returns new length. Slower than push (reindexes). |
+| `shift()` | Removes the **first** element. Returns removed element. Slower than pop. |
+| `splice(start, deleteCount, ...items)` | Add/remove/replace at any index. Returns array of removed elements. |
+| `sort(compareFn)` | Sorts in place. Default sorts as **strings**! For numbers, always pass a compare function. Returns the sorted array. |
+| `reverse()` | Reverses element order in place. |
+
+```js
+let arr = [10, 20];
+arr.push(30, 40);        // [10, 20, 30, 40]
+arr.pop();                // [10, 20, 30]
+arr.unshift(0);           // [0, 10, 20, 30]
+arr.shift();               // [10, 20, 30]
+
+let removed = arr.splice(1, 1, 99); // remove 1 elem at index 1, insert 99
+console.log(arr);      // [10, 99, 30]
+console.log(removed);  // [20]
+
+// Sorting numbers correctly:
+let nums = [100, 10, 3, 420, 5];
+nums.sort((a, b) => a - b); // ascending
+nums.sort((a, b) => b - a); // descending
+```
+> **Why `(a,b) => a-b` for sort?** If result is negative → `a` before `b`. If positive → `b` before `a`. If `0` → order unchanged. Number.sort() with no compare function sorts lexicographically (as strings) — `[100, 25, 3]` becomes `[100, 25, 3]` sorted as strings → wrong numeric order.
+
+### Array Non-Mutating Methods (return new data, original untouched)
+
+| Method | Description |
+|---|---|
+| `indexOf(value)` | Index of first occurrence; `-1` if not found. |
+| `lastIndexOf(value)` | Index of last occurrence; `-1` if not found. |
+| `includes(value)` | `true`/`false` if value exists. |
+| `concat(arr2, ...)` | Merges two or more arrays, returns a **new** array. |
+| `slice(start, end)` | Returns a copy of a portion (end index **excluded**). Supports negative indices. |
+| `join(separator)` | Joins elements into a string. Default separator is `","`. |
+| `flat(depth)` | Flattens nested arrays. Default depth `1`. Use `Infinity` for unknown depth. Removes empty slots. |
+
+```js
+let arr = [1, 2, 3];
+arr.concat([4, 5]);       // [1,2,3,4,5] — new array
+arr.slice(1, 3);           // portion from index 1 to 2 (3 excluded)
+
+[1, [2, 3]].flat();        // [1, 2, 3]
+[1, [2, [3]]].flat();      // [1, 2, [3]] (default depth 1)
+[1, [2, [3]]].flat(Infinity); // [1, 2, 3]
+
+[10, 20, 30].join();       // "10,20,30"
+[10, 20, 30].join(' - '); // "10 - 20 - 30"
+```
+
+### Array Loops
+
+| Loop | Access | Notes |
+|---|---|---|
+| `for...of` | Values directly | Cannot access index directly. Works on arrays & strings. Preferred for arrays. |
+| `for...in` | Indexes (as strings) | Not recommended for arrays; better suited to objects. |
+
+```js
+let snacks = ["Chips", "Biscuit"];
+for (let item of snacks) console.log(item);   // values
+for (let index in snacks) console.log(index); // indexes (as strings: "0","1")
+```
+
+### Array Advanced (Higher-Order) Methods
+
+**Common points for all advanced methods:**
+1. All accept a **callback function** as an argument.
+2. All are Higher Order Functions.
+3. Callback receives up to 3 params: `(element, index, array)` — index & array are optional.
+
+| Method | Purpose | Returns |
+|---|---|---|
+| `forEach(cb)` | Just iterate over each element (side effects only) | `undefined` — no chaining, no new array |
+| `find(cb)` | First element matching condition | The matched **value** (not array); `undefined` if none match |
+| `filter(cb)` | All elements matching condition | A **new array** (may be empty) |
+| `map(cb)` | Transform each element | A **new array**, same length |
+| `some(cb)` | At least one element satisfies condition | `true`/`false`. On empty array → always `false` |
+| `every(cb)` | All elements satisfy condition | `true`/`false`. On empty array → always `true` |
+| `reduce(cb, initialValue)` | Reduce array to a single value | The accumulated result |
+
+```js
+let arr = [10, 20, 21, 22];
+
+arr.forEach((el, i, a) => console.log(el, i));
+
+arr.find(el => el % 2 === 0);        // 10 (first even)
+arr.filter(el => el % 2 === 0);      // [10, 20, 22]
+arr.map(el => el * 2);               // [20, 40, 42, 44]
+arr.some(el => el % 2 === 1);        // true (21 is odd)
+arr.every(el => el % 2 === 0);       // false (21 fails)
+```
+
+**`reduce()` deep dive:**
+```js
+arr.reduce((accumulator, current, index, array) => {
+  return updatedAccumulator;
+}, initialValue);
+```
+- Must **always return the accumulator** — this becomes the new accumulator for the next iteration.
+- If `initialValue` is **not passed**, the first array element becomes the initial accumulator, and iteration starts from the 2nd element.
+- No chaining support after reduce (it returns a single value, not an array).
+- To get an **object** as the final result, pass an **empty object `{}`** as the initial value.
+
+```js
+let arr = [1, 2, 3, 4, 5];
+let sum = arr.reduce((acc, cur) => acc + cur, 0); // 15
+
+// frequency counter
+let freq = ["a", "b", "a", "c"].reduce((acc, cur) => {
+  acc[cur] = (acc[cur] || 0) + 1;
+  return acc;
+}, {}); // { a: 2, b: 1, c: 1 }
+```
+
+**`map()` vs `forEach()`:**
+- `map()` returns a **new array** with transformed values — use when you need the result.
+- `forEach()` returns `undefined` — use only for side effects (logging, DOM updates), no chaining.
+
+---
+
+## 20. Objects
+
+An **object** is a non-primitive, **mutable** data type — a collection of **key : value** pairs (each pair is called a **property**). Values can be anything: strings, numbers, booleans, arrays, functions, even other objects.
+
+### Ways to Create Objects
+
+**1. Object literal `{}`** — simplest, most common:
+```js
+let person = { name: "Smith", age: 20 };
+```
+
+**2. `new Object()`** — rarely used in modern JS, literals preferred:
+```js
+let obj = new Object();
+obj.name = "Rahul";
+```
+
+**3. Constructor function** — used before ES6, for creating multiple similar objects:
+```js
+function Person(first, last, age) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+}
+const p1 = new Person("John", "Doe", 30);
+```
+> **What `new` does internally:** (1) creates an empty object `{}` → (2) binds `this` to that object → (3) assigns passed arguments as properties → (4) returns the object automatically.
+
+**4. ES6 Class** — cleanest modern syntax, internally still prototype-based:
+```js
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  greet() { console.log("Hello " + this.name); }
+}
+let p1 = new Person("Rahul", 25);
+p1.greet();
+```
+
+### Accessing / Modifying Properties
+```js
+let person = { name: "Smith", age: 20 };
+
+person.name;         // dot notation
+person["age"];       // bracket notation (needed for dynamic/variable keys)
+
+person.city = "NY";   // add
+person.age = 26;      // update
+delete person.city;   // delete
+```
+
+### Object Methods (all static — accessed via `Object.method()`)
+
+| Method | Purpose | Returns |
+|---|---|---|
+| `Object.keys(obj)` | Get all keys | Array of keys |
+| `Object.values(obj)` | Get all values | Array of values |
+| `Object.entries(obj)` | Get key-value pairs | Array of `[key, value]` pairs |
+| `Object.assign(target, ...sources)` | Merge/copy objects | The mutated target object |
+| `Object.seal(obj)` | Prevents **add/delete** of properties; **update is allowed** | The same object, now sealed |
+| `Object.freeze(obj)` | Prevents **add/delete/update** entirely — fully immutable | The same object, now frozen |
+| `Object.isSealed(obj)` | Check if sealed | `true`/`false` |
+| `Object.isFrozen(obj)` | Check if frozen | `true`/`false` |
+
+```js
+let user = { name: "Rahul", age: 25 };
+
+Object.keys(user);    // ["name", "age"]
+Object.values(user);  // ["Rahul", 25]
+Object.entries(user); // [["name","Rahul"], ["age",25]]
+
+let merged = Object.assign({}, {x: 1}, {y: 2}); // {x:1, y:2}
+// recommended: first argument = {} (empty), so originals aren't mutated
+
+Object.seal(user);
+user.age = 20;      // ✅ allowed — update
+user.city = "Blr";  // ❌ not allowed — add
+delete user.name;   // ❌ not allowed — delete
+
+Object.freeze(user);
+user.age = 30;       // ❌ not allowed at all
+```
+> **Note:** Every frozen object is also sealed, but not every sealed object is frozen (sealed still allows updates).
+> `Object.freeze()` is **shallow** — nested objects inside a frozen object are NOT automatically frozen.
+
+### The `this` Keyword
+
+- `this` points to the **current object** — i.e., the object that is "calling" the function.
+- If there is **no current/owning object**, `this` falls back to the **global object** (`window` in browsers).
+- `this` is **dynamic** — its value depends on *how* a function is called, not where it's written.
+
+```js
+let std = {
+  fn: "Sourabh",
+  greet: function () {
+    console.log(this); // std object — because std.greet() calls it
+  }
+};
+std.greet();
+
 function demo() {
-  console.log("I am demo function");
+  console.log(this); // window — no owning object
 }
 demo();
 ```
 
+**Arrow functions and `this`:**
+Arrow functions do **not** have their own `this`. They inherit `this` from their **enclosing (lexical) scope**.
 ```js
-function sum(a, b) {
-  console.log(arguments); // Arguments object: [10, 20]
-  return a + b;
-}
-console.log(sum(10, 20)); // 30
-```
-
-#### 2) Anonymous Function
-A function declared **without an identifier** (no name). It must be stored in a variable to be executed/invoked.
-
-**Syntax:**
-```js
-var variableName = function (params) {
-  // code to execute
-};
-variableName(args);
-```
-
-**Example:**
-```js
-var add = function (a, b) {
-  return a + b;
-};
-console.log(add(10, 20)); // 30
-```
-
-#### 3) Arrow Function
-A shorter, cleaner syntax for writing functions, introduced in **ES6 (2015)**. Best suited for **callbacks**.
-
-**Syntax:**
-```js
-const functionName = (parameters) => {
-  // function body
+let std = {
+  fn: "Sourabh",
+  arrow: () => {
+    console.log(this); // window — NOT std, because arrow fns don't bind their own `this`
+  }
 };
 ```
-> `=>` is called the **"fat arrow"**.
-
-**Examples:**
-```js
-let arrow = () => {
-  console.log("arrow function");
-};
-arrow();
-
-const add = (a, b) => {
-  return a + b;
-};
-add(20, 30);
-```
-
-**Arrow Function Characteristics:**
-
-**a) No arguments:**
-```js
-() => {
-  // function body
-}
-```
-
-**b) Exactly one argument** (parentheses optional):
-```js
-let square = a => {
-  console.log(a * a);
-};
-square(2);
-```
-
-**c) More than one argument** (parentheses required):
-```js
-const add = (a, b) => {
-  console.log(a + b);
-};
-add(20, 30);
-```
-
-**d) Implicit Return:** if the function body has only **one expression** (one line), it automatically returns it — no `{}` or `return` needed.
-```js
-const square = x => x * x;
-square(3); // 9
-```
-
-**e) Explicit Return:** needed when using `return` explicitly, or when the function has **more than one line** of code — requires `{}`.
-```js
-const add = (a, b) => {
-  return a + b;
-};
-console.log(add(50, 60)); // 110
-
-const greet = (name) => {
-  console.log("Hello");
-  console.log(name);
-};
-greet("John");
-```
-
-**Limitations of Arrow Functions:**
-- ❌ Arrow functions do **not** have their own `this` keyword (they inherit `this` from the enclosing scope).
-- ❌ Arrow functions **cannot** be used as constructors (can't be used with `new`).
-- ❌ Arrow functions do **not** have their own `arguments` object.
-
-### Function Types — Quick Comparison
-
-| Type | Named? | Hoisted? | Has own `this`? | Has `arguments`? | Best for |
-|---|---|---|---|---|---|
-| Normal/Named | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | General-purpose functions |
-| Anonymous | ❌ No | ❌ No | ✅ Yes | ✅ Yes | One-off functions stored in variables |
-| Arrow | Depends on variable | ❌ No | ❌ No (inherits) | ❌ No | Callbacks, short one-liners |
+> **Rule of thumb:** `this` inside a regular function/method = the object it's called on. `this` inside an arrow function = whatever `this` was in the surrounding (outer) code.
 
 ---
 
-## 15. ⚡ IIFE (Immediately Invoked Function Expression)
+## 21. call(), apply(), bind()
 
-A function that **executes immediately** after it is defined.
-- No need to call it separately.
-- Runs **only once**.
+`this` is dynamic in JS — it depends on *how* a function is invoked, not where it's defined. `call`, `apply`, and `bind` let you **explicitly control what `this` refers to**, and let you **reuse/borrow** functions across different objects.
 
-> 📝 **Note:**
-> - An IIFE must be wrapped in `( )`.
-> - A semicolon *before* an IIFE is often recommended to avoid accidental errors when concatenated with the previous statement.
-
-**Syntax:**
 ```js
-(function (params) {
-  // code
-})(arguments);
+function greet() { console.log(this.name); }
+greet(); // undefined (or throws in strict mode) — no controlling object
 ```
 
-**Example:**
+### `call()`
+Invokes the function **immediately**, arguments passed **individually**.
 ```js
-(function () {
-  console.log("IIFE executed");
-})();
+function.call(thisArg, arg1, arg2, ...)
+```
+```js
+function introduce(city, country) {
+  console.log(`${this.name} from ${city}, ${country}`);
+}
+let person = { name: "Anita" };
+introduce.call(person, "Delhi", "India"); // Anita from Delhi, India
 ```
 
-> 💡 **Extra Insight:** IIFEs were historically the go-to way to create **private scope** and avoid polluting the global namespace — before ES6 block scoping (`let`/`const`) and modules became common. They're still widely used in libraries to wrap code safely.
-
+### `apply()`
+Same as `call()`, invokes **immediately**, but arguments are passed as a **single array**.
 ```js
-// IIFE with arguments
-(function (name) {
-  console.log("Hello " + name);
-})("Sourabh");
+function.apply(thisArg, [arg1, arg2, ...])
+```
+```js
+introduce.apply(person, ["Delhi", "India"]); // Anita from Delhi, India
+```
+
+### `bind()`
+Does **NOT** invoke immediately. Returns a **new function** with `this` permanently bound (and optionally, pre-filled/partial arguments). Call the returned function whenever needed.
+```js
+const newFn = function.bind(thisArg, arg1, arg2, ...);
+newFn(); // invoked later
+```
+```js
+function greet() { console.log(this.name); }
+let user = { name: "Rahul" };
+let boundGreet = greet.bind(user);
+boundGreet(); // Rahul — this is now permanently user
+
+// partial application
+function introduce(city, country) {
+  console.log(`${this.name} from ${city}, ${country}`);
+}
+let intro = introduce.bind(person, "AP");
+intro("India"); // Anita from AP, India
+```
+
+### Quick Comparison
+
+| Method | Invokes immediately? | Arguments format | Typical use |
+|---|---|---|---|
+| `call()` | ✅ Yes | Comma-separated | Invoke now with a specific `this` |
+| `apply()` | ✅ Yes | Array | Invoke now, args already in array form |
+| `bind()` | ❌ No — returns a new function | Comma-separated | Fix `this` for later use (callbacks, events) |
+
+---
+
+## 22. Math Object
+
+`Math` is a built-in **global** object (non-primitive) for mathematical operations. All properties/methods are **static** — call directly as `Math.method()`. Works only with `Number` type.
+
+| Method | Description | Example |
+|---|---|---|
+| `Math.abs(n)` | Absolute (positive) value | `Math.abs(-10)` → `10` |
+| `Math.round(n)` | Round to nearest integer | `Math.round(4.6)` → `5` |
+| `Math.floor(n)` | Round **down** | `Math.floor(4.9)` → `4`, `Math.floor(-4.1)` → `-5` |
+| `Math.ceil(n)` | Round **up** | `Math.ceil(4.1)` → `5` |
+| `Math.sqrt(n)` | Square root | `Math.sqrt(25)` → `5` |
+| `Math.cbrt(n)` | Cube root | `Math.cbrt(27)` → `3` |
+| `Math.pow(base, exp)` | Exponentiation | `Math.pow(10, 3)` → `1000` |
+| `Math.min(...n)` | Smallest of the given numbers | `Math.min(10,20,-50)` → `-50` |
+| `Math.max(...n)` | Largest of the given numbers | `Math.max(10,20,-50)` → `20` |
+| `Math.random()` | Random decimal, always **between 0 (inclusive) and 1 (exclusive)** | e.g. `0.4821` |
+
+> `Math.min()`/`Math.max()` only work on individual numbers passed as arguments, **not** directly on an array (use spread: `Math.max(...arr)`).
+
+**Generating a random number/OTP in a range:**
+```js
+Math.floor(Math.random() * (max - min + 1) + min);
+
+// 4-digit OTP (1000–9999)
+let otp = Math.floor(Math.random() * 9000 + 1000);
+
+// 6-digit OTP (100000–999999)
+let otp6 = Math.floor(Math.random() * 900000 + 100000);
 ```
 
 ---
 
-## 16. 🎯 Higher Order Functions (HOF)
+## 23. Date Object
 
-A function that:
-- **accepts another function as an argument**, OR
-- **returns a function**
+`Date` is a built-in object used to work with date & time. Internally stores time as **milliseconds since Jan 1, 1970** (the "epoch" / reference date).
 
-**Example 1 — accepts a function as argument:**
 ```js
-function calculate(a, b, operation) {
-  return operation(a, b);
-}
-
-function add(x, y) {
-  return x + y;
-}
-
-console.log(calculate(10, 5, add)); // 15
+let today = new Date();          // current date & time
+today.toDateString();             // e.g. "Sun Aug 23 2026"
+today.toTimeString();
+today.toString();
 ```
 
-**Example 2 — returns a function:**
+**Creating a custom date:**
 ```js
-function mul(a) {
-  return function (b) {
-    return a * b;
+let customDate = new Date("2026-11-21");     // "YYYY-MM-DD" format
+let customDate2 = new Date(2026, 10, 21);    // year, month(0-indexed!), day
+console.log(customDate); // returns the complete date object
+```
+> ⚠️ Month is **0-indexed** (`0` = January, `11` = December).
+
+**Get methods (read from a date):**
+
+| Method | Returns |
+|---|---|
+| `getFullYear()` | Year (4-digit) |
+| `getMonth()` | Month, **0-indexed** (0–11) |
+| `getDate()` | Day of month (1–31) |
+| `getDay()` | Day of week, 0-indexed (0 = Sunday) |
+| `getHours()` / `getMinutes()` / `getSeconds()` | Time components |
+
+**Set methods (update parts, rest stays the same):**
+
+| Method | Purpose |
+|---|---|
+| `setFullYear(year)` | Updates the year |
+| `setMonth(month)` | Updates the month (0-indexed) |
+| `setDate(day)` | Updates the day of month |
+| `setHours()` / `setMinutes()` | Updates time components |
+
+```js
+let d = new Date();
+d.setFullYear(2030);
+d.setMonth(1);   // February
+d.setDate(1);
+console.log(d);
+```
+
+**`Date.now()`** — returns current time in milliseconds since epoch (useful for measuring elapsed time / performance):
+```js
+console.log(Date.now());
+```
+
+---
+
+## 24. BOM (Browser Object Model)
+
+**BOM** lets JavaScript communicate with the **browser itself** (not the page content — that's the DOM's job). It's part of the browser environment, **not** part of core JS.
+
+| | Represents |
+|---|---|
+| **DOM** | What is *inside* the webpage (the HTML content) |
+| **BOM** | What is *around* the webpage, in the browser (window, tabs, history, screen…) |
+
+All BOM objects live inside the global **`window`** object — `window` is the parent-most object.
+
+### Key `window` Properties
+
+| Property | Purpose |
+|---|---|
+| `document` | Represents the loaded HTML page; gives access to the DOM. Technically part of DOM, but reached via BOM (`window.document`). |
+| `screen` | Read-only info about the user's monitor: `screen.width`, `screen.height`. Cannot be changed (hardware property). |
+| `history` | Tracks visited pages within the session. |
+| `location` | Info about the current URL (`location.href`, etc.); can be set to redirect. |
+| `innerWidth` / `innerHeight` | Visible viewport area of the page (excludes browser chrome). Used in responsive design. |
+| `outerWidth` / `outerHeight` | Full browser window size, including tabs/address bar/borders. |
+
+```js
+console.log(screen.width, screen.height);
+console.log(location.href);
+location.href = "https://www.google.com"; // redirect
+
+console.log(window.innerWidth, window.innerHeight);
+console.log(window.outerWidth, window.outerHeight);
+```
+
+**`history` methods:**
+```js
+history.back();     // go to previous page
+history.forward();  // go to next page
+history.go(-2);     // jump back 2 pages (negative = back, positive = forward)
+history.go(2);
+```
+
+### Dialog Methods (Window / Browser Methods)
+
+| Method | Purpose | Returns |
+|---|---|---|
+| `alert(message)` | Shows a message box with OK button. Blocks execution until dismissed. | No return value |
+| `prompt(message, default?)` | Takes user text input. | A **string** if entered; `null` if cancelled — input is always a string, convert with `Number()` if needed |
+| `confirm(message)` | Asks for confirmation. | `true` (OK) or `false` (Cancel) |
+
+```js
+alert("Look here!");
+
+let name = prompt("Enter Name"); // always a string
+let num = Number(prompt("Enter number")); // convert to number
+
+let ok = confirm("Are you sure you want to exit?"); // true/false
+```
+
+### Timer Methods (Asynchronous JavaScript basics)
+
+> ⚠️ `setTimeout`/`setInterval` are **not** part of core JS — they are **BOM/browser Web APIs** (runtime APIs) used to schedule JavaScript execution.
+
+**`setTimeout(callback, delay)`**
+Executes the callback **once**, after the given delay (in milliseconds).
+```js
+setTimeout(() => {
+  console.log("Runs after 3 seconds");
+}, 3000);
+```
+
+**`clearTimeout(timeoutId)`**
+Cancels a pending `setTimeout` **before** it executes. Must store the ID returned by `setTimeout` to be able to cancel it.
+```js
+let timeId = setTimeout(() => {
+  console.log("This will never run");
+}, 5000);
+
+clearTimeout(timeId); // cancelled before it fires
+```
+
+**`setInterval(callback, interval)`**
+Executes the callback **repeatedly**, once every `interval` milliseconds, until stopped.
+```js
+setInterval(() => {
+  console.log("Runs every 1 second");
+}, 1000);
+```
+
+**`clearInterval(intervalId)`**
+Stops a running interval. If you don't stop it, it runs forever.
+```js
+let intervalId = setInterval(() => {
+  console.log("tick");
+}, 1000);
+
+clearInterval(intervalId); // stops the repeating execution
+```
+
+---
+
+## 25. DOM — Selectors, Reading & Manipulating Content
+
+**DOM (Document Object Model)** — a tree-like structure/object representation of an HTML document, created by the browser when the HTML file loads. It provides complete programmatic access to the HTML page.
+
+```
+document
+   └── html
+         ├── head
+         │     ├── meta
+         │     ├── meta
+         │     └── title
+         └── body
+               ├── h1
+               ├── p
+               └── script
+```
+- `document` → `html` (parent/child relationship). Elements at the same level (e.g. two `<meta>` tags, or `<h1>`/`<p>`/`<script>` inside `<body>`) are called **siblings**.
+- **DOM Node** — everything in the DOM is organized as a node: **Document node**, **Element node** (`<body>`, `<h1>`…), **Text node** (the actual text inside an element), **Comment node**.
+- `document` is the object (provided by the browser) used to access and manipulate the DOM.
+- `document` technically belongs to the DOM, but is exposed to JS **through** the BOM (`window.document`) — that's why DOM and BOM are closely linked even though they represent different things.
+
+---
+
+### DOM Selectors
+
+To access any DOM method, we use the global `document` object.
+
+| Method | Returns | Notes |
+|---|---|---|
+| `document.getElementById('id')` | A **single** element | Fastest. Returns first match; recommended to use only 1 unique id (no duplicate ids). |
+| `document.getElementsByClassName('class')` | **HTMLCollection** (array-like, not a real array) | Live collection; supports index access, **not** `forEach`. |
+| `document.getElementsByTagName('tag')` | **HTMLCollection** | Same class name as above — array-like, not real array. |
+| `document.querySelector('css selector')` | The **first** matching element | Accepts **any** CSS selector (`#id`, `.class`, `tag`, universal, etc.) |
+| `document.querySelectorAll('css selector')` | A **NodeList** | Similar to an array; **supports `forEach`**, but is **not** a true array (can't use `map`/`filter`/`reduce` directly — convert with `Array.from()` if needed). |
+
+```js
+document.getElementById('title');
+document.getElementsByClassName('box');
+document.getElementsByTagName('p');
+document.querySelector('.container');   // first match
+document.querySelectorAll('.item');     // NodeList of all matches
+```
+
+> **HTMLCollection vs NodeList (interview favorite):**
+> | | HTMLCollection | NodeList |
+> |---|---|---|
+> | Returned by | `getElementsBy...` methods | `querySelectorAll` |
+> | `forEach` support | ❌ No | ✅ Yes |
+> | Live/static | Live (auto-updates with DOM changes) | Usually static (snapshot) |
+> | True array? | ❌ No | ❌ No (array-like) |
+
+### Reading Content
+
+| Property | Returns |
+|---|---|
+| `element.innerText` | Rendered text content — **only what's visible on the UI** (ignores hidden/CSS-hidden elements) |
+| `element.innerHTML` | The full HTML markup inside the element (tags + text), visible content only |
+| `element.textContent` | **All** text content — including hidden elements (ignores CSS display), but strips out HTML tags |
+
+```js
+let box = document.querySelector('.box');
+console.log(box.innerText);
+console.log(box.innerHTML);
+console.log(box.textContent);
+```
+
+### Creating & Inserting Elements
+
+```js
+// 1. Create the element
+let h1 = document.createElement("h1");
+
+// 2. Add text content
+h1.textContent = "DOM";
+
+// 3. Set attributes
+h1.setAttribute("id", "dom");
+
+// 4. Insert into the page (attach to parent)
+document.body.append(h1);       // or:
+document.body.appendChild(h1);
+```
+
+| Method | Notes |
+|---|---|
+| `append(...)` | Can append **multiple** elements/text at once; also works on **text content**, not only nodes. |
+| `appendChild(node)` | Accepts **only one** node at a time; works on nodes only. |
+| `prepend()` | Inserts **before** the first child (needs no argument requirement beyond node/text). |
+
+```js
+p.append(p2, "I am from somewhere"); // multiple items, mixed types allowed
+```
+
+### Setting / Removing Attributes & Classes
+
+```js
+h1.setAttribute('class', '1');
+h1.setAttribute('class', '2'); // ⚠️ overrides previous value — doesn't append
+
+h1.removeAttribute('id');      // removes the id attribute entirely
+
+// To add MULTIPLE classes without overriding existing ones, use classList:
+p.classList.add("demo");
+p.classList.add("jsp");
+p.classList.remove("demo");    // remove a class
+```
+
+### CSS Styling via JS
+
+Can be done 3 ways: **inline**, **internal**, **external**. Via JS, we do it **inline**, which is **not recommended** for large-scale styling (better to toggle classes instead). CSS property names always use **camelCase** in JS (`fontSize`, not `font-size`).
+
+```js
+let a = document.querySelector('div');
+
+a.style.color = "blue";
+a.style.fontSize = "10px";
+```
+
+### Removing Elements
+
+```js
+div.remove();  // removes the element directly from the DOM
+p.remove();
+```
+
+---
+
+## 26. Events
+
+An **event** is a set of actions triggered by the browser or by a user.
+
+**Types of event triggers:**
+- **User-triggered events** — e.g., adding an item to a cart (click-driven).
+- **Browser-triggered events** — e.g., page load, resize (login/pop-up-style automatic triggers).
+
+**Types of events:**
+1. Mouse events
+2. Keyboard events
+3. Form events
+4. Browser events (e.g. `load`, `resize`)
+
+### Ways to Attach an Event to an Element
+
+**1. Using an HTML attribute (prefix `on`)** — least recommended:
+```html
+<button onclick="console.log('you clicked')">Click</button>
+<button onmousedown="alert('you are good')">Press</button>
+```
+- Must add the `on` prefix: `onclick`, `ondblclick`, `onmousedown`, `onmousemove`, etc.
+- ⚠️ **Downsides:** can't attach the same event multiple times this way (it overrides the previous handler); mixes JS logic into HTML → HTML structure gets messy/complex.
+
+**2. Using a DOM element property** (`element.onclick = function(){...}`) — better, but still only one handler per event type (assigning again overrides the previous one).
+
+**3. `addEventListener()`** — ✅ **most recommended.** No `on` prefix needed; supports attaching **multiple** listeners to the same event on the same element.
+```js
+element.addEventListener('click', callbackFunction);
+```
+
+### Mouse Events
+
+| Event | Fires when |
+|---|---|
+| `click` | Element is clicked |
+| `dblclick` | Element is double-clicked |
+| `mousedown` | Mouse button goes down (left or right click) |
+| `mouseup` | Mouse button is released |
+| `mousemove` | Mouse pointer moves over the element (fires continuously — tracks pixel position while moving) |
+
+### Keyboard Events
+
+| Event | Fires when |
+|---|---|
+| `keydown` | A key is pressed down |
+| `keypress` | *(largely deprecated — prefer `keydown`)* |
+| `keyup` | A key is released |
+
+```js
+input.addEventListener('keydown', (e) => {
+  console.log("you pressed a key");
+  console.log(e.key); // gives the exact key pressed
+});
+```
+
+### Form Events
+
+No `on` prefix needed when using `addEventListener`.
+
+| Event | Fires when |
+|---|---|
+| `submit` | A form is submitted (attach to the `<form>` element) |
+| `input` | The value of an input field changes (fires on every keystroke) |
+| `change` | An input's value changes **and loses focus** (fires once, on blur) |
+
+```js
+form.addEventListener('submit', (e) => {
+  e.preventDefault();      // stops the default page-reload/navigation behavior
+  console.log('form submitted');
+});
+
+form.addEventListener('input', (e) => {
+  console.log(e.target.value); // current input value
+});
+
+form.addEventListener('change', (e) => {
+  console.log(e.target.value);
+});
+```
+
+> **`preventDefault()`** — the default behavior of a `submit` event is to **reload the page**. To stop this default action, call `e.preventDefault()` inside the handler. Other default behaviors it can stop: unchecking a checked checkbox, following an `<a>` link's navigation.
+
+### The Event Object (`e`)
+
+The callback for any event automatically receives an **event object** — conventionally named `e` — which:
+- Controls the event's **default behavior** (`e.preventDefault()`).
+- Gives info about the event (`e.target` → the element that triggered it, `e.key` → key pressed, etc.).
+- Powers advanced patterns like **debouncing** and **throttling** (performance techniques to limit how often a handler runs — covered separately).
+
+---
+
+## 27. Event Propagation & Event Delegation
+
+**Event Propagation** — the complete process of how an event travels through the DOM tree: **Capturing phase → Target → Bubbling phase**.
+
+```
+Capturing:  DOM/parent  → → →  target/child   (top to bottom)
+Bubbling:   target/child → → → DOM/parent     (bottom to top)
+```
+
+- **Event Capturing** — the process of an event moving from the DOM/parent **down to** the target/child element.
+- **Event Bubbling** — the process of an event moving from the target/child **up to** the DOM/parent, after the event is triggered. **This is the default flow in JS.**
+
+```
+Example structure: div > sec > btn
+Click on btn → default bubbling order: btn → sec → div
+```
+
+**Enabling capturing phase:**
+By default, `addEventListener` listens during the **bubbling** phase. To switch to the **capturing** phase, pass `true` as the 3rd argument:
+```js
+element.addEventListener('click', callback, true); // capturing phase
+element.addEventListener('click', callback);        // bubbling phase (default) — same as passing `false`
+```
+
+**`stopPropagation()`**
+Stops the event from continuing further along its path (either phase).
+```js
+div.stopPropagation();
+```
+- In the **capturing** phase → stops the event from traveling further **toward** the target.
+- In the **bubbling** phase → stops the event from moving further **up toward the parent**; it stays only on the target where it was called.
+
+### Event Delegation
+
+**Event Delegation** — attaching **one** event listener to a common **parent**, and using **event bubbling** to handle events for all its child elements (instead of attaching a separate listener to every child).
+
+```js
+// Instead of attaching a click listener to every <li>...
+ul.addEventListener('click', (e) => {
+  console.log(e.target); // the actual child element clicked
+});
+```
+
+**Why delegation matters:**
+- **Without delegation**, you must attach a listener to each child individually — and if a **new** child element is added later (dynamically), you'd have to remember to attach the event to it too. Not scalable/proactive.
+- **With delegation**, a single listener on the parent automatically handles clicks on **any** child — including ones added dynamically later — because the click always bubbles up to the parent.
+
+---
+
+## 28. Promises
+
+A **Promise** is an **object**, introduced in **ES6**. It's a **placeholder** for a value that will be available in the future — used to handle the eventual **success or failure** of an **asynchronous** operation.
+
+> Mental model: *"I don't have the result right now, but I will give it to you later."*
+
+### The 3 States of a Promise
+
+| State | Meaning |
+|---|---|
+| **Pending** | Still waiting — initial state |
+| **Fulfilled** | Operation succeeded |
+| **Rejected** | Operation failed |
+
+### Creating a Promise
+
+```js
+let promise1 = new Promise((resolve, reject) => {
+  // resolve(value)  → marks the promise as fulfilled
+  // reject(error)   → marks the promise as rejected
+});
+```
+- The `Promise` constructor takes **one callback function**, which itself receives **2 parameters**: `resolve` and `reject`.
+
+```js
+let p1 = new Promise((resolve, reject) => {
+  let a = 10;
+  if (a === 10) {
+    resolve("Promise Resolved");
+  } else {
+    reject("Promise Rejected");
+  }
+});
+```
+
+**Direct resolve (shortcut, no executor logic needed):**
+```js
+Promise.resolve("Biryani Ordered");
+Promise.reject("Paneer Ordered");
+```
+
+### Handling a Promise — `.then()` and `.catch()`
+
+```js
+p1.then((msg) => {
+  console.log(msg);      // runs if the promise resolves
+}).catch((err) => {
+  console.log(err);      // runs if the promise rejects
+});
+```
+
+**With `setTimeout` inside (simulating a delayed operation):**
+```js
+let p2 = new Promise((res, rej) => {
+  setTimeout(() => {
+    res("Promise Resolved");
+  }, 200);
+});
+
+p2.then((msg) => {
+  console.log(msg);
+}).catch((err) => {
+  console.log(err);
+});
+```
+
+### Promise Static Methods (4 methods)
+
+| Method | Behavior |
+|---|---|
+| `Promise.any([...])` | Returns the **first resolved/fulfilled** promise. Throws an error only if **all** are rejected. |
+| `Promise.all([...])` | Returns an array of results **only if all** promises resolve. If **any one rejects**, immediately returns/throws that first rejection. |
+| `Promise.allSettled([...])` | Waits for **all** promises to settle (resolve or reject) and returns an array of objects describing the **status** (`fulfilled`/`rejected`) and value/reason of **each**. |
+| `Promise.race([...])` | Returns whichever promise **settles first** — resolved or rejected, irrespective of status. |
+
+```js
+let biryani  = Promise.resolve('Biryani Ordered');
+let chicken65 = Promise.resolve('Chicken 65 ordered');
+let paneer   = Promise.reject('Paneer order failed');
+
+// any() — first RESOLVED
+Promise.any([biryani, chicken65, paneer])
+  .then((msg) => console.log(msg))   // "Biryani Ordered"
+  .catch((err) => console.log(err));
+
+// all() — fails fast on first rejection
+Promise.all([biryani, chicken65, paneer])
+  .then((msgs) => console.log(msgs))
+  .catch((err) => console.log(err)); // "Paneer order failed"
+
+// allSettled() — waits for everything, reports status of each
+Promise.allSettled([biryani, chicken65, paneer])
+  .then((results) => console.log(results));
+  // [{status:'fulfilled', value:'Biryani Ordered'}, ..., {status:'rejected', reason:'Paneer order failed'}]
+
+// race() — first to SETTLE, resolved or rejected
+Promise.race([biryani, chicken65, paneer])
+  .then((msg) => console.log(msg))
+  .catch((err) => console.log(err));
+```
+
+---
+
+## 29. async / await
+
+`async` and `await` are a **pair of keywords**, introduced in **ES6**, used to overcome messy **promise chaining** and make asynchronous code look and behave like synchronous code.
+
+- **`async`** — makes a function asynchronous. An `async` function **always returns a Promise** automatically — even a plain return value gets auto-wrapped inside a Promise.
+- **`await`** — pauses execution and waits until the Promise **settles** (resolves or rejects) **without blocking the main thread**. Lets you extract the resolved value directly, without `.then()` chaining.
+- They **must be used together** — `await` is only valid inside an `async` function.
+- The code **after** an `await` is scheduled to continue as a **microtask** once the awaited promise settles.
+
+```js
+let fetchData = async () => {
+  let response = await fetch("URL");
+  let finalData = await response.json();
+  console.log(finalData);
+};
+fetchData();
+```
+
+**Error handling with `try...catch`:**
+```js
+let fetchData = async () => {
+  try {
+    let response = await fetch("URL");
+    let finalData = await response.json();
+    console.log(finalData);
+  } catch (error) {
+    console.log(error);
+  }
+};
+fetchData();
+```
+
+> **Why async/await over `.then()` chains:** it improves readability, simplifies promise handling, and makes error handling cleaner (one `try/catch` block instead of scattered `.catch()`s).
+
+---
+
+## 30. fetch()
+
+`fetch()` is a built-in browser method, introduced in **ES6**, used to make network requests — commonly used to extract data from an API for testing/consuming.
+
+- It **returns a Promise**.
+- Before ES6, `XMLHttpRequest` (XHR) was used to make API calls — verbose and callback-heavy. `fetch()` replaced it with a cleaner, promise-based syntax and it's why every page used to fully **refresh** after every API call/POST before AJAX-style requests became common.
+
+**Using `.then()` chaining:**
+```js
+let fetchData = fetch("URL");
+
+fetchData.then((response) => {
+  console.log(response);
+  return response.json();       // parses the response body as JSON — also returns a Promise
+}).then((finalData) => {
+  console.log(finalData);
+}).catch((error) => {
+  console.error(error);
+});
+```
+
+**Using `async/await` (cleaner):**
+```js
+let fetchData = async () => {
+  let response = await fetch("URL");
+  let finalData = await response.json();
+  console.log(finalData);
+};
+fetchData();
+```
+
+### Promise Chaining
+
+Using multiple `.then()` blocks back-to-back is called **Promise Chaining**. It quickly becomes hard to read/maintain for nested async steps — this is **not recommended** for complex flows. `async`/`await` exists specifically to overcome this.
+
+---
+
+## 31. Event Loop: Microtask vs Macrotask Queue
+
+JavaScript is **single-threaded and synchronous**, so it needs a mechanism to handle async callbacks (`setTimeout`, Promises, fetch, etc.) without blocking. That's the job of the **Event Loop**, which checks task **priority** for execution — synchronous code first, then queued async callbacks.
+
+**Execution priority order:**
+1. **Synchronous code** — always runs first, completely, top to bottom (the call stack).
+2. **Microtask queue** — runs next. Comes from: **Promises** (`.then`/`.catch`/`.finally`, `async/await` continuations).
+3. **Macrotask queue** — runs last (lower priority than microtasks). Comes from: `setTimeout`, `setInterval`.
+
+> **Rule of thumb:** the entire microtask queue is fully drained **before** the event loop picks even a single macrotask — so a `Promise.resolve().then()` will always run before a `setTimeout(fn, 0)`, even though the timeout has "0" delay.
+
+```js
+console.log("1");                              // sync
+setTimeout(() => console.log("2 - macrotask"), 0);
+Promise.resolve().then(() => console.log("3 - microtask"));
+console.log("4");                              // sync
+
+// Output order: 1, 4, 3 - microtask, 2 - macrotask
+```
+
+---
+
+## 32. ES6 Features: Destructuring, Spread & Rest
+
+### Destructuring
+
+A concise way to **extract values from an array or properties from an object** and assign them directly to variables.
+
+**Array destructuring:**
+```js
+let arr = [1, 2, 3];
+let [a, b, c] = arr;
+// a = 1, b = 2, c = 3
+
+// Nested arrays:
+let arr2 = [10, [20, [30], 40], 50];
+let [a1, [b1, [c1], d1], e1] = arr2;
+// a1=10, b1=20, c1=30, d1=40, e1=50
+```
+
+**Object destructuring:**
+```js
+let std = {
+  name: 'Sourabh',
+  phn: 12345,
+  age: 21,
+  add: { state: 'MP', city: 'Indore' },
+  skills: ['Java', 'Python']
+};
+
+// Keys MUST match property names exactly (order doesn't matter, unlike arrays)
+let { name, skills, addr: { state } } = std;
+```
+
+### Spread Operator (`...`)
+
+Used to **expand** the elements of an array or the properties of an object **into** a new array or object. Used on the **right-hand side** (source being expanded).
+
+```js
+let combined = [...arr1, ...arr2];    // merges two arrays
+
+let obj3 = { ...obj1, ...obj2 };      // merges two objects
+// If keys overlap, the LATER spread's properties override earlier ones.
+// A key present in the old object but absent in the new one is kept as-is.
+```
+
+### Rest Operator (`...`)
+
+Used to **collect** the remaining elements/properties into a **new array or object**. Looks identical to spread (`...`) but works in the **opposite direction** — used on the **left-hand side** (destination gathering leftovers).
+
+```js
+let arr = [10, 20, 30, 40, 50];
+let [a, b, c, ...rest] = arr;
+// a=10, b=20, c=30, rest=[40, 50]
+```
+- `...rest` always collects into an **array** (for arrays) or **object** (for objects).
+- The rest element must be **last** — you can't have anything after it in the destructuring pattern.
+- The rest variable name isn't fixed — can be any valid identifier.
+
+> **Rest vs Spread — quick distinction:** **Rest** is always on the **left side** (collecting/gathering). **Spread** is always on the **right side** (expanding/unpacking).
+
+---
+
+## 33. Shallow Copy vs Deep Copy
+
+### Shallow Copy
+
+A concept/technique used to create a **duplicate copy** of a non-primitive (object/array), so that modifying the copy does **not** affect the original — **but only at the top (first) level.**
+
+```js
+let a = [1, 2, 3];
+let b = [...a];       // shallow copy via spread
+b.push(4);
+console.log(a);        // [1, 2, 3]     — original untouched
+console.log(b);        // [1, 2, 3, 4]
+```
+
+> ⚠️ **Shallow copy does NOT work for nested structures.** If the array/object contains a **nested** object/array inside it, that nested part is copied **by reference** — modifying the nested part in the copy **will** affect the original too.
+
+### Deep Copy
+
+Used to create a **duplicate copy** especially for **nested** structures — modifying any level (including nested objects/arrays) in the copy does **not** affect the original at all. Works for both arrays and objects.
+
+**Method 1 — using `JSON.stringify()` + `JSON.parse()`:**
+```js
+let orgObj = { name: "Manoj Bhai", addr: { city: "Bhopal" } };
+
+let stringify = JSON.stringify(orgObj);   // converts JS object → JSON string
+let deepCopy = JSON.parse(stringify);      // converts JSON string → back to a JS object (new reference)
+
+deepCopy.name = "Manoj Sir";
+deepCopy.addr.city = "Bhopal";  // modifying nested value only affects the copy
+```
+> **Drawbacks of the JSON method:** `undefined` values and `Date` objects are removed/converted to strings incorrectly; **functions are also removed entirely** (JSON has no concept of a function).
+
+**Method 2 — using `structuredClone()`** *(modern, preferred — no drawbacks of JSON method for most data types):*
+```js
+let strClone = structuredClone(orgObj); // returns a new, fully independent object
+strClone.name = "Manoj";
+strClone.addr.city = "Bhopal";
+```
+> `structuredClone()` throws an error if the object/array contains a **function** — it can't clone functions either, but it correctly handles `Date`, `Map`, `Set`, nested structures, etc. (unlike the JSON method).
+
+**JS Object vs JSON (quick comparison):**
+
+| | JS Object | JSON |
+|---|---|---|
+| Value types | Any JS value | Only **string** values (after stringify) |
+| Keys | Any valid identifier | **Key & value both must be strings** |
+| Portability | JS-specific | Language-independent (used for data exchange) |
+| Related methods | — | `JSON.stringify()`, `JSON.parse()` |
+
+---
+
+## 34. Remaining JS Concepts
+
+**Template Literals / String Interpolation** — backtick-delimited strings (`` ` ``) that allow embedded expressions via `${}`, and support multi-line strings without `\n`.
+```js
+let name = "Sourabh";
+console.log(`Hello ${name}, welcome!`); // string interpolation
+```
+
+**Optional Chaining (`?.`)** — safely access deeply nested object properties without throwing an error if an intermediate property is `null`/`undefined`.
+```js
+let user = {};
+console.log(user?.address?.city); // undefined, no error thrown
+```
+
+**Nullish Coalescing Operator (`??`)** — returns the right-hand value **only** when the left-hand value is `null` or `undefined` (unlike `||`, which also treats `0`, `""`, `false` as falsy).
+```js
+let count = 0;
+console.log(count || 10); // 10  → 0 is falsy, so || falls through (often a bug!)
+console.log(count ?? 10); // 0   → 0 is not null/undefined, so ?? keeps it
+```
+
+**`Set`** — a collection of **unique** values (no duplicates allowed). Useful for de-duplicating arrays.
+```js
+let s = new Set([1, 2, 2, 3]);
+console.log(s);           // Set(3) {1, 2, 3}
+console.log([...s]);      // [1, 2, 3] — back to array
+```
+
+**`Map`** — a collection of key-value pairs (like an object), but **keys can be any type** (not just strings), and it maintains insertion order.
+```js
+let m = new Map();
+m.set("name", "Rahul");
+m.set(1, "one");
+console.log(m.get("name")); // "Rahul"
+```
+
+**Modules (`import` / `export`)** — split JS code across multiple files.
+```js
+// utils.js
+export function add(a, b) { return a + b; }
+export default function greet() { console.log("Hi"); }
+
+// main.js
+import greet, { add } from './utils.js';
+```
+
+**`"use strict"`** — enables strict mode, which catches common coding mistakes (like assigning to an undeclared variable) by throwing errors instead of failing silently.
+
+**Autoboxing** — JavaScript automatically **wraps a primitive value** (string, number, boolean) in a temporary **wrapper object** when you call a method on it, so you can use methods like `.toUpperCase()` on a plain string primitive. The wrapper object is discarded right after the operation.
+```js
+let str = "hello";
+console.log(str.toUpperCase()); // JS temporarily "boxes" str into a String object to call this method
+```
+
+**Generators (brief overview)** — functions that can pause and resume execution using `function*` and `yield`, producing a sequence of values on demand instead of all at once.
+```js
+function* gen() {
+  yield 1;
+  yield 2;
+}
+let g = gen();
+console.log(g.next().value); // 1
+console.log(g.next().value); // 2
+```
+
+**Local Storage & Session Storage** — browser-provided key-value storage (part of the Web Storage API, similar in spirit to BOM):
+| | `localStorage` | `sessionStorage` |
+|---|---|---|
+| Persistence | Survives even after closing the browser | Cleared when the tab/browser closes |
+| Scope | Shared across all tabs of the same origin | Limited to a single tab |
+
+```js
+localStorage.setItem("theme", "dark");
+console.log(localStorage.getItem("theme")); // "dark"
+localStorage.removeItem("theme");
+```
+
+---
+
+## 35. Node.js Basics
+
+**Node.js** is a **JavaScript runtime environment** built on Chrome's **V8 engine**, that lets JavaScript run **outside the browser** — e.g., on a server, directly on your machine's operating system.
+
+- Before Node.js, JS could only run inside a browser (no BOM/DOM available outside one). Node.js gave JS access to the **file system, operating system, networking**, etc. — turning JS into a full backend language.
+- Node.js is **single-threaded** (like browser JS) but handles concurrency using an **event loop** + **non-blocking I/O**, making it efficient for I/O-heavy tasks (APIs, servers, file operations).
+- Uses the **CommonJS module system** by default (`require`/`module.exports`), though modern Node also supports ES Modules (`import`/`export`).
+
+**Running a file:**
+```bash
+node app.js
+```
+
+**Core built-in modules:**
+| Module | Purpose |
+|---|---|
+| `fs` | File system — read/write files |
+| `http` | Create a basic web server |
+| `path` | Work with file/directory paths |
+| `os` | Get operating system info |
+
+```js
+// CommonJS module system
+const fs = require('fs');
+module.exports = someFunction;
+```
+
+**Creating a basic server with the built-in `http` module:**
+```js
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  res.write("Hello from Node.js server");
+  res.end();
+});
+
+server.listen(3000, () => {
+  console.log("Server running on port 3000");
+});
+```
+
+**`npm` (Node Package Manager)** — installed automatically with Node.js. Used to install, manage, and share reusable JS packages/libraries.
+```bash
+npm init -y            # creates a package.json file
+npm install express    # installs a package, adds it to package.json
+```
+
+**`package.json`** — the manifest file of a Node project: lists project metadata, dependencies, and scripts (e.g. `npm start`, `npm run dev`).
+
+---
+
+## 36. Express.js Basics
+
+**Express.js** is a minimal, unopinionated **web framework for Node.js**, used to build web servers and APIs quickly — without manually handling all the low-level details the raw `http` module requires (routing, request parsing, etc.).
+
+**Installing & basic setup:**
+```bash
+npm install express
+```
+```js
+const express = require('express');
+const app = express();
+
+app.listen(3000, () => {
+  console.log("Server running on port 3000");
+});
+```
+
+### Routing
+
+Express lets you define **routes** — a combination of an HTTP method + a URL path — each with a handler function.
+
+```js
+app.get('/', (req, res) => {
+  res.send("Home Page");
+});
+
+app.get('/about', (req, res) => {
+  res.send("About Page");
+});
+
+app.post('/submit', (req, res) => {
+  res.send("Form submitted");
+});
+```
+- `req` (request) — contains info about the incoming request: URL params, query params, request body, headers.
+- `res` (response) — used to send data back: `res.send()`, `res.json()`, `res.status()`.
+
+### Middleware
+
+A **middleware** function runs **between** the incoming request and the final route handler — used for logging, authentication, parsing request bodies, etc. It has access to `req`, `res`, and a `next()` function to pass control to the next middleware/handler.
+
+```js
+app.use(express.json()); // built-in middleware — parses incoming JSON request bodies
+
+app.use((req, res, next) => {
+  console.log(`${req.method} request to ${req.url}`);
+  next(); // must call next() to continue to the next handler
+});
+```
+
+### Route Parameters & Query Parameters
+
+```js
+// Route parameter — part of the URL path itself
+app.get('/user/:id', (req, res) => {
+  console.log(req.params.id); // e.g. /user/5 → "5"
+});
+
+// Query parameter — after "?" in the URL
+app.get('/search', (req, res) => {
+  console.log(req.query.term); // e.g. /search?term=js → "js"
+});
+```
+
+### Sending JSON Responses (typical for APIs)
+```js
+app.get('/api/user', (req, res) => {
+  res.json({ name: "Rahul", age: 25 });
+});
+```
+
+> Express is the most widely used Node.js framework for building REST APIs, forming the "E" in the popular **MERN** stack (MongoDB, Express, React, Node).
+
+---
+
+## 37. Quick Interview Cheatsheet
+
+- **JS created in:** 10 days, by Brendan Eich, 1995 (Netscape). Standardized as **ECMAScript** in 1997.
+- **`var` vs `let` vs `const`:** scope (function/global vs block), redeclaration, TDZ.
+- **`==` vs `===`:** loose (coerces types) vs strict (no coercion) — always prefer `===`.
+- **`null` vs `undefined`:** intentional absence vs "not yet assigned".
+- **`typeof null` is `"object"`** — famous JS quirk/bug, kept for backward compatibility.
+- **Hoisting:** declarations move to top; `var` → `undefined`, `let`/`const` → TDZ (ReferenceError until initialized).
+- **Closures:** inner function "remembers" outer function's variables even after outer returns.
+- **`this`:** dynamic, decided by *how* a function is called. Arrow functions don't have their own `this` — they inherit it lexically.
+- **`call`/`apply`/`bind`:** all control `this`. `call`/`apply` invoke immediately (comma args vs array args); `bind` returns a new function for later use.
+- **`map` vs `forEach`:** `map` returns a new array (chainable); `forEach` returns `undefined` (side effects only).
+- **`reduce`:** must always return the accumulator; pass `{}` as initial value to build an object result.
+- **`Object.seal` vs `Object.freeze`:** seal blocks add/delete but allows update; freeze blocks everything.
+- **DOM vs BOM:** DOM = the page content (tree of the HTML); BOM = the browser environment around the page (window, history, screen, location, timers).
+- **`setTimeout`/`setInterval`:** browser Web APIs, not core JS — this is the entry point into async JS.
+- **`getElementsBy...` vs `querySelector(All)`:** the former return a live **HTMLCollection** (no `forEach`); `querySelectorAll` returns a **NodeList** (supports `forEach`, still not a true array).
+- **Event capturing vs bubbling:** capturing = parent→child (top-down); bubbling = child→parent (bottom-up, the JS default). `stopPropagation()` halts further travel in either phase.
+- **Event delegation:** attach one listener to a parent, rely on bubbling — handles current AND future dynamically-added children automatically.
+- **Promise states:** pending → fulfilled/rejected (settled), never both, never reversible.
+- **`Promise.all` vs `allSettled` vs `race` vs `any`:** `all` fails fast on first rejection; `allSettled` always waits for every promise and reports status of each; `race` returns whichever settles first (win or lose); `any` returns the first fulfilled one, only errors if ALL reject.
+- **`async`/`await`:** syntactic sugar over promises — makes async code read like sync code; always wrap in `try/catch` for error handling.
+- **Event loop order:** synchronous code → microtasks (Promises) → macrotasks (`setTimeout`/`setInterval`). Microtask queue always fully empties before the next macrotask runs.
+- **Spread vs Rest:** identical `...` syntax; spread **expands** (right-hand side), rest **collects** (left-hand side).
+- **Shallow vs deep copy:** shallow copy (`{...obj}`/spread) only protects the top level — nested objects are still shared by reference; deep copy (`structuredClone()` or JSON stringify/parse) fully isolates nested data too.
+- **Node.js:** a runtime (not a language/framework) that lets JS run outside the browser, built on V8, using an event loop for non-blocking I/O.
+- **Express.js:** a minimal Node.js web framework for building servers/APIs — handles routing and middleware so you don't have to use the raw `http` module.
+
+---
+
+## 38. Interview Q&A — All 31 Questions, Trainer-Style
+
+> Every answer below is built strictly from the concepts already covered in sections 1–37 of this document — nothing new is introduced. Each answer follows the same 4-step interview structure: **Definition → Why it exists / Purpose → Example → Interview Point**, with a flow diagram wherever it helps a beginner visualize the concept.
+
+---
+
+### Q1. What is JavaScript? What are its characteristics?
+
+**Definition:** JavaScript is a high-level, interpreted, dynamically-typed scripting/programming language used to make web pages interactive (frontend, in the browser) and to build applications outside the browser too (backend, via Node.js).
+
+**Why it's built this way:** It needed to run instantly inside every browser without installation or compilation — so it had to be lightweight, interpreted, and forgiving with types.
+
+**Characteristics (§2):**
+```
+JavaScript
+   ├── Single-threaded        → one call stack, one thing at a time
+   ├── Dynamically typed      → type decided at runtime
+   ├── Interpreted            → runs line by line
+   ├── Synchronous by default → but LOOKS async via Event Loop + Web APIs
+   ├── Loosely/weakly typed   → auto type coercion
+   ├── Object-based           → pre-ES6, objects without full OOP
+   └── Object-oriented        → from ES6, via `class` + prototypes
+```
+
+**Example:**
+```js
+console.log("122" + 2); // "1222" → coerced to string
+console.log("122" - 2); // 120    → coerced to number
+```
+
+**Interview point:** JavaScript and Java are **unrelated** — the name was purely a 1995 marketing decision (§3). Don't confuse the two.
+
+---
+
+### Q2. What is Hoisting? (with example)
+
+**Definition:** Hoisting is JS moving variable and function **declarations** to the top of their scope during the compilation/memory-creation phase, before any code actually runs. Only declarations are hoisted — never the assigned value.
+
+**Why it happens:** Every execution context has a "memory creation phase" that scans the code first and reserves space for every `var`, `let`, `const`, and function — that's what makes hoisting possible (§8, §17).
+
+**Flow diagram:**
+```
+Code written by you:              What the JS engine does first (Memory phase):
+─────────────────────             ──────────────────────────────────────────────
+console.log(a);                   var a = undefined      ← reserved in advance
+var a = 10;                       let b  = <TDZ>          ← reserved but locked
+console.log(b);                   const c = <TDZ>         ← reserved but locked
+let b = 20;
+                                   THEN Execution phase runs top to bottom:
+                                   console.log(a) → undefined
+                                   a = 10
+                                   console.log(b) → ReferenceError (still in TDZ)
+                                   b = 20
+```
+
+**Example:**
+```js
+console.log(a); // undefined  (var is hoisted, pre-filled with undefined)
+var a = 10;
+
+console.log(b); // ReferenceError (let is hoisted but stuck in TDZ)
+let b = 20;
+```
+
+**Interview point:** Hoisting does **not** mean JS physically rearranges your code — it means declarations are registered in memory before execution starts (§8).
+
+---
+
+### Q3. What is TDZ (Temporal Dead Zone)?
+
+**Definition:** TDZ is the window of time between a `let`/`const` variable being hoisted (declared) and the line where it's actually initialized. Trying to access it in that window throws a `ReferenceError`.
+
+**Why it exists:** It stops you from accidentally using a `let`/`const` variable before you meant to define it — `var` doesn't protect against this (it silently gives `undefined` instead).
+
+**Flow diagram:**
+```
+Scope starts
+     │
+     │   ← TDZ (variable exists in memory but is "locked")
+     │      accessing it here = ReferenceError
+     ▼
+let x = 10;   ← declaration line — TDZ ends HERE
+     │
+     ▼
+x is now safely accessible
+```
+
+**Example:**
+```js
+console.log(x); // ❌ ReferenceError — still in TDZ
+let x = 10;
+```
+
+**Interview point:** TDZ applies **only** to `let` and `const`. `var` has no TDZ — it's auto-initialized to `undefined` the moment it's hoisted (§8).
+
+---
+
+### Q4. Difference between `var`, `let`, and `const`?
+
+**Definition:** Three different keywords for declaring variables, each with different scope and mutability rules (§6).
+
+| Feature | `var` | `let` | `const` |
+|---|---|---|---|
+| Scope | Function/Global | Block | Block |
+| Redeclare | ✅ Allowed | ❌ Error | ❌ Error |
+| Reassign | ✅ Allowed | ✅ Allowed | ❌ Error |
+| Must initialize immediately | No | No | ✅ Yes |
+| Hoisting behavior | `undefined` | TDZ | TDZ |
+
+**Example:**
+```js
+var a = 10; var a = 20;   // ✅ redeclare allowed
+let b = 10; b = 20;       // ✅ reassign allowed, redeclare NOT allowed
+const c = 10;              // ❌ cannot reassign c later
+```
+
+**Interview point (trap):** `const` locks the **binding** (the variable name), not the value's contents.
+```js
+const arr = [1, 2, 3];
+arr.push(4); // ✅ allowed — mutating contents, not reassigning the variable
+```
+
+---
+
+### Q5. Difference between `==` and `===`?
+
+**Definition:** `==` is loose equality — it converts types before comparing. `===` is strict equality — it compares both **value and type**, with zero conversion (§9).
+
+**Flow diagram:**
+```
+5 == "5"
+   │
+   ▼
+Convert "5" (string) → 5 (number)   ← coercion happens
+   │
+   ▼
+5 == 5 → true
+
+5 === "5"
+   │
+   ▼
+No conversion — types differ (number vs string) → false immediately
+```
+
+**Example:**
+```js
+console.log(5 == "5");  // true  → coercion
+console.log(5 === "5"); // false → no coercion, types differ
+```
+
+**Interview point:** Always prefer `===`/`!==` in real code — `==` produces surprising, hard-to-debug results (§9).
+
+---
+
+### Q6. Difference between `null` and `undefined`?
+
+**Definition:** `undefined` means a variable has been declared but **never assigned** a value (JS's own default). `null` means the developer **intentionally** set "no value" (§9).
+
+**Example:**
+```js
+let x;
+console.log(x); // undefined — JS's own default, nobody assigned anything
+
+let y = null;
+console.log(y); // null — the developer deliberately chose "empty"
+
+console.log(null == undefined);  // true  → both are "kinds of empty" (loose)
+console.log(null === undefined); // false → different types
+console.log(typeof null);        // "object" — a long-standing JS quirk
+```
+
+**Interview point:** `typeof null` returning `"object"` is a famous historical bug in JS that was never fixed for backward compatibility — memorize this one, it's asked constantly.
+
+---
+
+### Q7. What is an arrow function, HOF, callback, and closure? (with example)
+
+**Definitions (§13–16):**
+- **Arrow function** — short function syntax `() => {}` with **no own `this`**; it borrows `this` from its surrounding scope.
+- **HOF (Higher Order Function)** — a function that takes another function as an argument, or returns a function. (`map`, `filter`, `reduce`, `forEach` are all HOFs.)
+- **Callback** — a function passed into another function, to be run later.
+- **Closure** — an inner function that keeps access to its outer function's variables, even after the outer function has already finished running.
+
+**How they relate:**
+```
+HOF        → a function that RECEIVES or RETURNS another function
+   │
+   └── Callback → the function you PASS IN to a HOF (or any function)
+                       │
+                       └── Closure → happens when that inner function
+                                      "remembers" outer variables
+```
+
+**Example (all four in one):**
+```js
+function outer() {                 // outer function
+  let count = 0;                   // variable that will be "remembered"
+  return function inner() {        // inner function → this IS the closure
+    count++;
+    console.log(count);
   };
 }
 
-let double = mul(2);
-double(5); // 10
+const counter = outer();  // outer() has already finished running here!
+counter(); // 1
+counter(); // 2   → `count` is still remembered — that's the closure at work
 ```
 
-> 💡 **Extra Insight:** Many built-in array methods are Higher Order Functions — `map()`, `filter()`, `reduce()`, `forEach()`, and `sort()` all accept a function as an argument.
+**Interview point:** A single function can be a callback AND form a closure at the same time, depending on how it's used (§16).
+
+---
+
+### Q8. What is an array?
+
+**Definition:** A non-primitive, ordered, **dynamic** (resizable) collection of values — homogeneous or heterogeneous — internally stored as an object, index starting from `0` (§19).
+
+**Example:**
+```js
+let fruits = ["Apple", "Mango", "Banana"];
+console.log(fruits[0]);     // "Apple"
+console.log(fruits.length); // 3
+```
+
+**Interview point:** Arrays are **mutable** — most common methods (`push`, `pop`, `splice`, `sort`, `reverse`) change the original array directly (§19).
+
+---
+
+### Q9. Difference between `slice()` and `splice()`?
+
+**Definition:** `slice(start, end)` is **non-mutating** — it returns a **new** array (a copy of a portion, end excluded); the original stays untouched. `splice(start, deleteCount, ...items)` is **mutating** — it removes/inserts elements directly inside the **original** array (§19).
+
+**Flow diagram:**
+```
+slice(1, 3)  → COPIES a portion out, original array unchanged  → 📄 new array
+splice(1, 2) → CUTS a portion directly out of the original      → ✂️ original array changes
+```
+
+**Example:**
+```js
+let arr = [10, 20, 30, 40];
+
+let sliced = arr.slice(1, 3);         // [20, 30]  — new array
+console.log(arr);                     // [10, 20, 30, 40] — untouched
+
+let removed = arr.splice(1, 2, 99);   // removes 20,30 and inserts 99
+console.log(arr);                     // [10, 99, 40] — original CHANGED
+console.log(removed);                 // [20, 30] — what got removed
+```
+
+**Interview point:** If you need to preserve the original array, use `slice()`. If you intentionally want to edit the array in place, use `splice()`.
+
+---
+
+### Q10. Difference between `split()` and `join()`?
+
+**Definition:** `split(separator)` is a **string** method that breaks a string into an **array**. `join(separator)` is an **array** method that combines elements back into a single **string** (§18–19).
+
+**Flow diagram:**
+```
+"a-b-c"  ──split('-')──▶  ["a","b","c"]
+["a","b","c"]  ──join('-')──▶  "a-b-c"
+```
+
+**Example:**
+```js
+"JavaScript is easy".split(" ");        // ["JavaScript", "is", "easy"]
+["JavaScript", "is", "easy"].join(" "); // "JavaScript is easy"
+```
+
+**Interview point:** They're exact inverses of each other — remember the direction: string → array (`split`), array → string (`join`).
+
+---
+
+### Q11. `filter()` vs `map()` vs `reduce()`? (with example)
+
+**Definition (§19):**
+- `map()` — **transforms** every element, returns a new array of the **same length**.
+- `filter()` — **selects** elements that pass a condition, returns a new array that may be **shorter**.
+- `reduce()` — **combines** every element into a **single final value**.
+
+**Flow diagram:**
+```
+[1, 2, 3, 4]
+
+map(x => x*2)      →  [2, 4, 6, 8]        (same length, every value transformed)
+filter(x => x%2==0)→  [2, 4]              (shorter, only matching values kept)
+reduce((a,c)=>a+c) →  10                  (collapsed into ONE value)
+```
+
+**Example:**
 ```js
 let nums = [1, 2, 3, 4];
-let doubled = nums.map(n => n * 2); // HOF in action
-console.log(doubled); // [2, 4, 6, 8]
+
+nums.map(n => n * 2);            // [2, 4, 6, 8]
+nums.filter(n => n % 2 === 0);   // [2, 4]
+nums.reduce((acc, n) => acc + n, 0); // 10
 ```
+
+**Interview point:** `reduce()` must **always return the accumulator** in its callback — forgetting the `return` breaks the whole chain (§19).
 
 ---
 
-## 17. 📞 Callback Functions
+### Q12. `map()` vs `forEach()`?
 
-A function passed as an **argument** to another function. It will be **executed later**, by that other function.
+**Definition:** `map()` returns a **new array** with transformed values (chainable). `forEach()` returns `undefined` — it's used purely for side effects like logging or DOM updates, with **no** returned array (§19).
 
+**Example:**
 ```js
-function greet(name, callback) {
-  console.log("Hello", name);
-  callback();
-}
+let nums = [1, 2, 3];
 
-function bye() {
-  console.log("Bye");
-}
+let doubled = nums.map(n => n * 2);
+console.log(doubled); // [2, 4, 6]
 
-greet("Rahul", bye);
-// Output:
-// Hello Rahul
-// Bye
+let result = nums.forEach(n => n * 2);
+console.log(result); // undefined
 ```
 
-> 💡 **Extra Insight:** A callback is a specific *use* of a Higher Order Function — every callback function is passed into a HOF, but not every HOF necessarily takes a "callback" in the traditional async sense. Callbacks are the foundation of asynchronous JS (`setTimeout`, event listeners, `fetch().then()`, etc.).
-
-```js
-// Common real-world pattern
-setTimeout(function () {
-  console.log("Runs after 2 seconds");
-}, 2000);
-```
+**Interview point:** If you need a transformed array back, use `map()`. If you just want to "do something" for every element (no returned data needed), use `forEach()`.
 
 ---
 
-## 18. 🪆 Nested Functions & Closures
+### Q13. Ways to create an object?
 
-### Nested Function
-A function written **inside another function**.
-- The inner function can access the outer function's variables.
-- An inner function is accessible **only inside its outer function** (unless returned).
-
-**Example 1 — Basic Nested Function:**
-```js
-function outer() {
-  console.log("Outer function");
-
-  function inner() {
-    console.log("Inner function");
-  }
-
-  inner(); // calling inner
-}
-
-outer();
+**Definition (§20):** JavaScript offers 4 ways to create an object:
+```
+1. Object literal        →  { name: "Rahul" }               (simplest, most common)
+2. new Object()          →  let obj = new Object();          (rarely used)
+3. Constructor function  →  function Person(){ this.x=1 }    (pre-ES6 pattern)
+4. ES6 class             →  class Person { constructor(){} } (modern, clean)
 ```
 
-**Example 2 — Accessing outer variables:**
+**Example:**
 ```js
-function outer() {
-  let name = "John"; // Outer function variable
+// literal
+let person = { name: "Rahul" };
 
-  function inner() {
-    console.log("Hello " + name);
-  }
+// constructor function
+function Person(name) { this.name = name; }
+let p1 = new Person("Rahul");
 
-  inner(); // Output: "Hello John"
+// class
+class PersonClass {
+  constructor(name) { this.name = name; }
 }
-
-outer();
-```
-> 📝 **Note:** `inner()` is written inside `outer()`, so it can access the variable `name`. This behavior is called **lexical scoping**.
-
-**Example 3 — Creating a counter using nested functions:**
-```js
-function outer() {
-  let count = 0;
-
-  function inner() {
-    count++;
-    return count;
-  }
-
-  return inner;
-}
-
-let counter = outer();
-
-counter(); // 1
-counter(); // 2
+let p2 = new PersonClass("Rahul");
 ```
 
-**Explanation:**
-- `outer()` runs once.
-- `inner()` is returned.
-- `count` is still **remembered** even after `outer()` has finished executing.
-- This is a **closure**.
-
-### Closure
-A **closure** is a function that remembers and has access to the declarations of its outer function, even after the outer function has finished executing.
-> A closure is generated for the outer function **only when** the inner function actually accesses the outer function's declarations.
-
-> 💡 **Extra Insight — Why closures matter:**
-> - They power **data privacy / private variables** in JS (before `#privateFields` existed in classes).
-> - They're the backbone of things like `debounce`, `throttle`, memoization, and module patterns.
-```js
-function bankAccount(balance) {
-  return {
-    deposit(amount) {
-      balance += amount;
-      return balance;
-    },
-    withdraw(amount) {
-      balance -= amount;
-      return balance;
-    }
-  };
-}
-
-let account = bankAccount(1000);
-console.log(account.deposit(500));  // 1500
-console.log(account.withdraw(200)); // 1300
-// 'balance' is completely private — inaccessible from outside!
-```
+**Interview point:** `new` internally does 4 things: creates an empty object → binds `this` to it → assigns the passed arguments as properties → returns the object automatically (§20).
 
 ---
 
-## 19. 🧠 Execution Context & Call Stack
+### Q14. `this` keyword — all behaviors?
 
-### GEC — Global Execution Context
+**Definition:** `this` refers to the **current object** calling the function. Its value depends **entirely on how the function is called**, not where it's written (§20).
 
-When JavaScript starts, a **Global Execution Context (GEC)** is created and pushed onto the **Call Stack**.
-
-Every JavaScript file executes in **two phases**:
-1. **Memory allocation phase** (a.k.a. Creation Phase)
-2. **Execution phase**
-
-### 🧠 Memory Allocation Phase
-- `var` variables are hoisted and initialized with `undefined`.
-- `let` and `const` are hoisted but remain **uninitialized** (Temporal Dead Zone — TDZ).
-- Functions are **fully hoisted** and stored in memory with their **complete definitions**.
-
-### ▶️ Execution Phase
-- Code executes **line by line**.
-- Variables are assigned their actual values.
-- `let` and `const` get initialized when execution reaches them.
-- Function declarations are already available in memory due to hoisting, so no extra execution happens at their declaration.
-
-### FEC — Function Execution Context
-
-When a function is **invoked**:
-- A new **Function Execution Context (FEC)** is created.
-- It is **pushed on top of** the GEC (or whichever context called it).
-
-**Inside the function:**
-1. **Memory phase** runs → local variables are hoisted, parameters are initialized, inner functions are stored.
-2. **Execution phase** runs → function code executes line by line.
-
-**After function execution:**
-- The Function Execution Context is **popped** from the Call Stack.
-- Control returns to the previous context (usually GEC).
-- The Call Stack follows **LIFO** (Last In, First Out).
-
-**After all code execution completes:**
-- The Global Execution Context is removed from the Call Stack, and the Call Stack becomes empty.
-
-> 💡 **Extra Insight — Visualizing the Call Stack:**
-```js
-function a() {
-  b();
-  console.log("a finished");
-}
-function b() {
-  console.log("b running");
-}
-a();
-
-// Call Stack timeline:
-// 1. [GEC]
-// 2. [GEC, a()]
-// 3. [GEC, a(), b()]   → "b running" logs
-// 4. [GEC, a()]        → b() popped, back in a()  → "a finished" logs
-// 5. [GEC]              → a() popped
-// 6. []                 → GEC popped, program ends
+**Decision flow diagram:**
+```
+How was the function called?
+        │
+        ├── obj.method()          → this = obj
+        │
+        ├── plain function call   → this = window (global object)
+        │
+        ├── new Constructor()     → this = the newly created object
+        │
+        ├── fn.call/apply/bind()  → this = whatever you explicitly passed
+        │
+        └── arrow function        → this = whatever `this` was in the
+                                      SURROUNDING (enclosing) scope
+                                      (arrow fns have NO `this` of their own)
 ```
 
-> ⚠️ This is also why **"stack overflow"** errors happen — if a function calls itself infinitely (bad recursion with no base case), the Call Stack keeps growing until it runs out of memory.
-
----
-
-## 20. 🔡 Strings & String Methods
-
-A **string** is a primitive data type in JavaScript used to store and manipulate a sequence of characters — essentially text.
-
-- 🔒 Strings are **immutable** (cannot be changed in place — every method returns a **new** string).
-- Stored inside quotes: `' '`, `" "`, or `` ` ` `` (backticks — template literals).
-- Indexing starts from **0**.
-- JavaScript automatically converts strings to objects when calling methods on them — this is called **auto-boxing**.
-
-> **Auto-boxing:** the process where JavaScript automatically converts a primitive value into its corresponding **object wrapper** when you try to access properties or methods on it. This happens only during that access — after execution, the temporary object is destroyed.
-
+**Example:**
 ```js
-let name = "JavaScript";
-let name2 = 'JavaScript';
-
-let name3 = `JavaScript is 
-             scripting and
-             programming language`;
-```
-
-**Finding string length** — use the `.length` property:
-```js
-console.log(name3.length);
-```
-
-> ⚠️ **All string methods return a new string — they never modify the original.**
-
-### 📋 String Methods Reference
-
-| # | Method | Purpose |
-|---|---|---|
-| 1 | `toLowerCase()` | Converts string to lowercase |
-| 2 | `toUpperCase()` | Converts string to uppercase |
-| 3 | `toString()` | Converts a value (number, boolean, array, object) to a string |
-| 4 | `trimStart()` | Removes spaces from the **start** only |
-| 5 | `trimEnd()` | Removes spaces from the **end** only |
-| 6 | `trim()` | Removes spaces from **both** ends |
-| 7 | `replace(search, new)` | Replaces the **first** occurrence only |
-| 8 | `replaceAll(search, new)` | Replaces **all** occurrences |
-| 9 | `slice(start, end)` | Extracts part of a string by index (supports negative index) |
-| 10 | `split(separator)` | Converts string → array, based on a separator |
-| 11 | `concat(...strings)` | Joins multiple strings into a new string |
-| 12 | `indexOf(value)` | Returns **first** occurrence index (-1 if not found) |
-| 13 | `lastIndexOf(value)` | Returns **last** occurrence index (-1 if not found) |
-| 14 | `includes(value)` | Checks if a string contains a value → `true`/`false` |
-| 15 | `charAt(index)` | Returns the character at a given index |
-| 16 | `startsWith(value)` | Checks if a string starts with a given value |
-| 17 | `endsWith(value)` | Checks if a string ends with a given value |
-| 18 | `repeat(count)` | Repeats the string `count` times |
-
-### 1) `toLowerCase()`
-```js
-let sub = "JAVASCRIPT";
-console.log(sub.toLowerCase()); // "javascript"
-
-"HELLO".toLowerCase(); // "hello"
-```
-
-### 2) `toUpperCase()`
-```js
-let sub2 = "html";
-console.log(sub2.toUpperCase()); // "HTML"
-```
-
-### 3) `toString()`
-Converts a value into a string. Works on numbers, booleans, arrays, objects. Returns a **new** string; does not modify the original value.
-```js
-let num = 123;
-console.log(num.toString());   // "123"
-// or
-console.log((123).toString());
-
-let bool = true;
-console.log(bool.toString());  // "true"
-
-let arr = [1, 2, 3];
-console.log(arr.toString());   // "1,2,3"
-```
-> ⚠️ We should **not** use `toString()` with `null` and `undefined` — it causes an error.
-
-### 4) `trimStart()`
-```js
-let str4 = "   hi";
-console.log(str4.trimStart()); // "hi"
-```
-
-### 5) `trimEnd()`
-```js
-let str5 = "hi   ";
-console.log(str5.trimEnd()); // "hi"
-```
-
-### 6) `trim()`
-```js
-let str6 = "   hi   ";
-console.log(str6.trim()); // "hi"
-```
-
-### 7) `replace(searchValue, newValue)`
-Replaces the **first** occurrence only. Case-sensitive.
-```js
-let str7 = "Java Java";
-let result7 = str7.replace("Java", "JS");
-console.log(result7); // "JS Java"
-```
-
-### 8) `replaceAll(searchValue, newValue)`
-Replaces **all** occurrences. Case-sensitive.
-```js
-let str8 = "Java Java";
-let result8 = str8.replaceAll("Java", "JS");
-console.log(result8); // "JS JS"
-```
-
-### 9) `slice(startIndex, endIndex)`
-Extracts part of a string based on index. End index **not** included. Supports negative indexes. **Most preferred** method for extracting substrings.
-```js
-let str11 = "JavaScript";
-let result11 = str11.slice(-6);
-console.log(result11); // "Script"
-```
-
-### 10) `split(separator)`
-Converts a string to an **array**, using a separator. Returns a new array — the original string doesn't change.
-```js
-let str12 = "ap&ple,ban&ana,man&go";
-let result12 = str12.split(",");
-console.log(result12); // ["ap&ple", "ban&ana", "man&go"]
-console.log(str12.split("&")); // ["ap", "ple,ban", "ana,man", "go"]
-```
-
-### 11) `concat()`
-`string1.concat(string2, string3, ...)` — joins multiple strings, returns a new string. The `+` operator or template literals are more commonly used in modern code.
-```js
-let a = "Hello";
-let b = "JS";
-let result13 = a.concat(" ", b);
-console.log(result13); // "Hello JS"
-```
-
-### 12) `indexOf()`
-`string.indexOf(searchValue)` — returns the **first** occurrence index. Returns `-1` if not found. Case-sensitive. Searches left → right.
-```js
-let str14 = "JavaScript";
-console.log(str14.indexOf("a")); // 1  (first 'a')
-console.log(str14.indexOf("r")); // 8
-```
-
-### 13) `lastIndexOf()`
-`string.lastIndexOf(searchValue)` — returns the **last** occurrence index. Returns `-1` if not found. Case-sensitive. Searches right → left.
-```js
-let str15 = "banana";
-console.log(str15.lastIndexOf("a")); // 5  (last 'a')
-```
-
-### 14) `includes()`
-`string.includes(searchValue)` — checks if a string contains a specified value. Returns `true`/`false`. Case-sensitive.
-```js
-let str16 = "I love JavaScript";
-console.log(str16.includes("JavaScript")); // true
-console.log(str16.includes("Java"));       // true
-console.log(str16.lastIndexOf("a"));       // last 'a' index
-```
-
-### 15) `charAt(index)`
-Returns the character at a given index. Returns empty string if index is negative or out of range.
-```js
-let str17 = "JavaScript";
-console.log(str17.charAt(0)); // "J"
-console.log(str17.charAt(5)); // "c"
-```
-
-### 16) `startsWith()`
-`string.startsWith(searchString)` — checks whether a string **starts** with a specified value. Returns boolean. Case-sensitive.
-```js
-let str = "JavaScript";
-console.log(str.startsWith("Java"));   // true
-console.log(str.startsWith("Script")); // false
-```
-
-### 17) `endsWith()`
-`string.endsWith(searchString)` — checks whether a string **ends** with a given value. Returns boolean. Case-sensitive.
-```js
-let str = "JavaScript";
-console.log(str.endsWith("Script")); // true
-console.log(str.endsWith("Java"));   // false
-```
-
-### 18) `repeat()`
-Creates a new string by repeating the original string a specified number of times. The original string does not change.
-
-**Syntax:** `string.repeat(count)`
-- `count` → number of times to repeat. Must be an integer ≥ 0.
-
-```js
-let str = "Hi! ";
-console.log(str.repeat(3));    // "Hi! Hi! Hi! "
-console.log("abc".repeat(5));  // "abcabcabcabcabc"
-```
-
-**Edge cases for `repeat()`:**
-- `count = 0` → returns an **empty string**.
-- `count` is **negative** → throws a **RangeError**.
-- `count` is a **decimal** → gets converted to an integer.
-
----
-
-## 21. 🎤 Tricky Interview Questions
-
-**Q1. What will this print?**
-```js
-console.log(typeof null);
-```
-**Answer:** `"object"`
-**Why:** This is a famous, long-standing **bug in JavaScript** (kept for backward compatibility). `null` is a primitive, but `typeof null` incorrectly returns `"object"`.
-
----
-
-**Q2. What's the output?**
-```js
-console.log(1 + "1");
-console.log(1 - "1");
-```
-**Answer:** `"11"` then `0`
-**Why:** `+` with a string triggers **string concatenation**. `-` forces numeric conversion since there's no string-subtraction operation.
-
----
-
-**Q3. Predict the output:**
-```js
-for (var i = 0; i < 3; i++) {
-  setTimeout(() => console.log(i), 0);
-}
-```
-**Answer:** `3 3 3`
-**Why:** `var` is function/global-scoped — all three callbacks share the **same** `i`, which is `3` by the time they run.
-
-**Q4. Now with `let`:**
-```js
-for (let i = 0; i < 3; i++) {
-  setTimeout(() => console.log(i), 0);
-}
-```
-**Answer:** `0 1 2`
-**Why:** `let` is block-scoped — a **new** `i` is created for each loop iteration (this is a classic **closure** interview question).
-
----
-
-**Q5. What happens here?**
-```js
-console.log(a);
-let a = 5;
-```
-**Answer:** `ReferenceError: Cannot access 'a' before initialization`
-**Why:** `a` is hoisted but sits in the **TDZ** until its declaration line executes.
-
----
-
-**Q6. Output?**
-```js
-function foo() {
-  console.log(this);
-}
-const arrowFoo = () => {
-  console.log(this);
+let std = {
+  fn: "Sourabh",
+  greet: function () { console.log(this); } // std object
 };
-foo();
-arrowFoo();
+std.greet(); // this = std
+
+function demo() { console.log(this); } // window — no owning object
+demo();
+
+let std2 = {
+  fn: "Sourabh",
+  arrow: () => { console.log(this); } // this = window, NOT std2
+};
 ```
-**Why it's tricky:** A **regular function** called standalone has `this` = the global object (or `undefined` in strict mode). An **arrow function** has **no own `this`** — it inherits `this` from its surrounding lexical scope.
+
+**Interview point:** For a normal function ask "how was it called?" — for an arrow function ask "what was `this` in the code AROUND it?" (§20).
 
 ---
 
-**Q7. What does this print?**
-```js
-console.log([] == false);
-console.log([] == "");
-console.log([] == 0);
+### Q15. `call()`, `apply()`, `bind()`?
+
+**Definition:** All three let you explicitly control what `this` refers to inside a function (§21).
+
+**Flow diagram:**
 ```
-**Answer:** all `true`
-**Why:** These are classic loose-equality (`==`) coercion traps — an empty array gets converted to an empty string, which further converts to `0` during comparison.
+call(thisArg, a, b, c)     → runs NOW,  args passed one by one
+apply(thisArg, [a, b, c])  → runs NOW,  args passed as an array
+bind(thisArg, a, b)        → does NOT run now — returns a NEW function to call LATER
+```
 
----
-
-**Q8. Closure counter trap:**
+**Example:**
 ```js
-function counter() {
-  var count = 0;
-  return function () {
-    return count++;
-  };
+function introduce(city, country) {
+  console.log(`${this.name} from ${city}, ${country}`);
 }
-const c1 = counter();
-const c2 = counter();
-console.log(c1()); // ?
-console.log(c1()); // ?
-console.log(c2()); // ?
+let user = { name: "Anita" };
+
+introduce.call(user, "Delhi", "India");   // runs immediately
+introduce.apply(user, ["Delhi", "India"]); // runs immediately, args as array
+
+let laterFn = introduce.bind(user, "Delhi", "India");
+laterFn(); // runs whenever YOU call it
 ```
-**Answer:** `0, 1, 0`
-**Why:** `c1` and `c2` are two **separate closures**, each with its own private `count` — they don't share state.
+
+**Interview point:** `bind()` is the only one of the three that does **not** invoke the function right away — it hands you back a ready-to-use function for later (§21).
 
 ---
 
-**Q9. What's logged?**
+### Q16. Generate a 4-digit OTP.
+
+**Definition:** Uses `Math.random()` (gives a decimal between 0 inclusive and 1 exclusive) combined with `Math.floor()` to land inside a fixed numeric range (§22).
+
+**Example:**
 ```js
-console.log("5" + 3 - 1);
+let otp = Math.floor(Math.random() * 9000 + 1000); // range: 1000–9999
+console.log(otp);
 ```
-**Answer:** `52`
-**Why:** Evaluated **left to right**: `"5" + 3` → `"53"` (string concat), then `"53" - 1` → `52` (numeric subtraction forces conversion).
+
+**How the math works:**
+```
+Math.random()            → 0 up to (but never reaching) 1
+Math.random() * 9000     → 0 up to (but never reaching) 9000
++ 1000                   → 1000 up to (but never reaching) 10000
+Math.floor(...)          → rounds down → final range: 1000 to 9999
+```
+
+**Interview point:** The same pattern generalizes: `Math.floor(Math.random() * (max - min + 1) + min)` gives any custom OTP length (§22).
 
 ---
 
-**Q10. Tricky `switch` with no strict typing:**
+### Q17. `setTimeout()` vs `setInterval()`? (classic loop/event-loop question)
+
+**Definition:** `setTimeout(cb, delay)` runs the callback **once**, after the delay. `setInterval(cb, interval)` runs the callback **repeatedly** until `clearInterval()` stops it. Both are BOM/Web APIs, not core JS — they go into the **macrotask** queue (§24, §31).
+
+**Classic interview question — what logs first?**
 ```js
-let x = "1";
-switch (x) {
-  case 1:
-    console.log("Number one");
-    break;
-  case "1":
-    console.log("String one");
-    break;
-  default:
-    console.log("Nothing matched");
+console.log("1");
+setTimeout(() => console.log("2"), 0);
+console.log("3");
+```
+**Flow diagram (Event Loop priority, §31):**
+```
+Step 1: Run ALL synchronous code first   → logs "1", "3"
+Step 2: Drain the microtask queue        → (none here)
+Step 3: THEN run macrotasks (setTimeout) → logs "2"
+
+Output: 1, 3, 2   ← NOT 1, 2, 3 — setTimeout(fn, 0) does NOT mean "run instantly"
+```
+
+**The classic `var` vs `let` loop trap:**
+```js
+for (var i = 1; i <= 3; i++) {
+  setTimeout(() => console.log(i), 1000);
+}
+// Logs: 4, 4, 4 → var is function-scoped; by the time the callbacks
+// finally run, the loop has already finished and i is 4 for all of them.
+
+for (let i = 1; i <= 3; i++) {
+  setTimeout(() => console.log(i), 1000);
+}
+// Logs: 1, 2, 3 → let is block-scoped, so each loop iteration gets its
+// OWN fresh `i`, captured correctly by that iteration's closure.
+```
+
+**Interview point:** This question tests 3 things at once — closures, `var` vs `let` scoping, and the event loop's macrotask queue (§16, §6, §31).
+
+---
+
+### Q18. What is the DOM? (all — including form validation)
+
+**Definition:** The DOM (Document Object Model) is a tree-like object representation of an HTML document, created by the browser, giving JS complete access to read and modify the page (§25).
+
+**Flow diagram — the DOM tree:**
+```
+document
+   └── html
+         ├── head → meta, meta, title
+         └── body → h1, p, script  (siblings of each other)
+```
+
+**Selecting elements (§25):**
+```
+document.getElementById('id')            → single element
+document.getElementsByClassName('class') → HTMLCollection (no forEach)
+document.getElementsByTagName('tag')     → HTMLCollection (no forEach)
+document.querySelector('css')            → first matching element
+document.querySelectorAll('css')         → NodeList (supports forEach)
+```
+
+**Manipulating elements (§25):**
+```
+Create  → document.createElement("p")
+Read    → el.innerText / el.innerHTML / el.textContent
+Update  → el.setAttribute(), el.style.color, el.classList.add()
+Insert  → parent.append(el) / parent.appendChild(el)
+Delete  → el.remove()
+```
+
+**Form validation example (built from DOM selectors + events + preventDefault, §25–26):**
+```js
+const form = document.getElementById("form");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();                       // stop the default page reload
+  let email = document.getElementById("email").value.trim();
+
+  if (email === "") {
+    alert("Email is required");             // dialog method
+    return;
+  }
+  console.log("Form is valid");
+});
+```
+
+**Interview point:** DOM is the page **content**, while BOM is everything **around** the page (window, history, screen, location, timers) — they're different but linked, since `document` is technically reached through `window.document` (§24–25).
+
+---
+
+### Q19. What are events? What is `addEventListener()`?
+
+**Definition:** An event is an action triggered by the browser or the user — click, keypress, form submit, page load, etc. (§26).
+
+**3 ways to attach an event, and why one wins:**
+```
+1. HTML attribute (onclick="...")   → overrides itself if attached twice ❌
+2. DOM property (el.onclick = fn)   → also overrides itself if reassigned ❌
+3. addEventListener(type, callback) → supports MULTIPLE listeners ✅ (most recommended)
+```
+
+**Example:**
+```js
+const button = document.getElementById("btn");
+
+button.addEventListener("click", function (e) {
+  console.log("Button clicked");
+  console.log(e.target); // the actual element that triggered it
+});
+```
+
+**Interview point:** The callback always receives an **event object** (`e`), which controls default behavior (`e.preventDefault()`) and tells you what triggered the event (`e.target`) (§26).
+
+---
+
+### Q20. Event Propagation & Event Delegation?
+
+**Definition:** Event Propagation is the full journey an event takes through the DOM: **capturing phase → target → bubbling phase**. Event Delegation is a technique that uses bubbling to handle events for many children with just **one** listener on their parent (§27).
+
+**Flow diagram:**
+```
+              Capturing (top → down)
+   DOM ──────────────────────────▶ target
+   (parent)                       (child clicked)
+   DOM ◀────────────────────────── target
+              Bubbling (down → up, JS DEFAULT)
+```
+
+**Example — propagation:**
+```js
+parent.addEventListener("click", () => console.log("parent"));
+child.addEventListener("click", () => console.log("child"));
+
+// Clicking the child button logs:
+// "child"  → then →  "parent"     (because it bubbles UP by default)
+```
+
+**`stopPropagation()`** halts the event mid-journey, in either phase:
+```js
+child.addEventListener("click", (e) => {
+  e.stopPropagation(); // event won't continue bubbling up to "parent"
+});
+```
+
+**Example — delegation:**
+```js
+// ONE listener on the parent handles clicks on EVERY <li>, even future ones
+list.addEventListener("click", (e) => {
+  if (e.target.matches("li")) console.log(e.target.textContent);
+});
+```
+
+**Interview point:** Without delegation, every new dynamically-added child needs its own manually-attached listener. With delegation, new children are automatically handled — because their click still bubbles up to the same parent (§27).
+
+---
+
+### Q21. What are Promises? Their states and methods, with example?
+
+**Definition:** A Promise is an object (ES6) representing the eventual result — success or failure — of an asynchronous operation. Mental model: *"I don't have the result right now, but I will give it to you later."* (§28)
+
+**State flow diagram:**
+```
+                 ┌────────────┐
+   new Promise ─▶│  Pending   │  (still waiting — initial state)
+                 └─────┬──────┘
+              resolve()│reject()
+             ┌─────────┴─────────┐
+             ▼                   ▼
+      ┌────────────┐      ┌────────────┐
+      │ Fulfilled  │      │  Rejected  │
+      └────────────┘      └────────────┘
+      (settled — never goes back to Pending, never flips between the two)
+```
+
+**Example:**
+```js
+let p = new Promise((resolve, reject) => {
+  let success = true;
+  success ? resolve("Done") : reject("Failed");
+});
+
+p.then(msg => console.log(msg))    // handles fulfilled
+ .catch(err => console.log(err));  // handles rejected
+```
+
+**Static methods (§28):**
+```
+Promise.all([...])        → waits for ALL, fails fast on first rejection
+Promise.any([...])        → returns first FULFILLED, errors only if ALL reject
+Promise.allSettled([...]) → waits for ALL, reports status of EACH (never rejects)
+Promise.race([...])       → returns whichever SETTLES first (win or lose)
+```
+
+**Interview point:** A Promise settles **once** — it can never move from fulfilled back to pending, or flip from fulfilled to rejected (§28).
+
+---
+
+### Q22. What is Promise Chaining, and how do you overcome its downsides?
+
+**Definition:** Promise Chaining is linking multiple `.then()` blocks back-to-back to run sequential async steps (§30).
+
+**Flow diagram:**
+```
+fetch(url)
+   .then(response  ➜ response.json())     ← returns a NEW promise
+   .then(finalData ➜ console.log(finalData))
+   .catch(error    ➜ console.log(error))
+```
+
+**The downside:** for deeply nested or complex flows, stacking many `.then()`s becomes hard to read and maintain.
+
+**How it's overcome:** `async`/`await` lets the exact same sequential logic be written to **look and behave like synchronous code**, with one clean `try/catch` block instead of scattered `.catch()`s (§29–30).
+
+```js
+// promise chaining version
+fetch("URL").then(r => r.json()).then(d => console.log(d)).catch(e => console.log(e));
+
+// async/await version — same result, easier to read
+async function getData() {
+  try {
+    let r = await fetch("URL");
+    let d = await r.json();
+    console.log(d);
+  } catch (e) {
+    console.log(e);
+  }
 }
 ```
-**Answer:** `"String one"`
-**Why:** `switch` uses **strict equality (`===`)** internally — `"1"` (string) does not match `1` (number).
+
+**Interview point:** Async/await doesn't replace Promises — it's **syntactic sugar built on top of them** (§29).
 
 ---
 
-## 22. ⚠️ Edge Cases & Points to Remember
+### Q23. What are `async`/`await`? What is `fetch()`? Syntax & example?
 
-### 🔑 Variables & Scope
-- `var` inside a block **leaks out** — it does not respect `{ }` boundaries.
-- Redeclaring a `let`/`const` in the **same** scope throws an error, but redeclaring in a **nested/child** scope is totally fine (shadowing).
-- `const` objects/arrays are mutable in content — only the reference/binding is frozen.
+**Definitions (§29–30):**
+- `async` — marks a function as asynchronous; it **always returns a Promise**, even if you just `return` a plain value.
+- `await` — pauses execution inside an `async` function until a Promise **settles**, without blocking the rest of the page (the main thread).
+- `fetch(url)` — a built-in browser method that makes a network request and **returns a Promise**; commonly used to call APIs.
 
-### 🔑 Equality & Type Coercion
-- `NaN` is the **only** value in JS that is not equal to itself (`NaN !== NaN`).
-- `typeof null` returns `"object"` — a known quirk, not a bug you caused.
-- Always prefer `===` over `==` unless you have an explicit reason to allow coercion.
-- `null == undefined` is `true`, but `null === undefined` is `false`.
-
-### 🔑 Hoisting
-- Function **declarations** are fully hoisted (you can call them before their definition in code).
-- Function **expressions** and **arrow functions** assigned to `var`/`let`/`const` are **not** callable before their line runs.
-```js
-sayHi(); // ✅ Works — full hoisting
-function sayHi() { console.log("Hi"); }
-
-sayBye(); // ❌ TypeError — sayBye is undefined at this point
-var sayBye = function () { console.log("Bye"); };
+**Flow diagram:**
+```
+async function fetchData() {
+  let response = await fetch("URL");     ← pauses HERE until the network reply arrives
+  let data = await response.json();      ← pauses HERE until the body is parsed
+  console.log(data);                     ← only runs after both awaits settle
+}
 ```
 
-### 🔑 Functions & Closures
-- Every function call creates a **new execution context** and (if applicable) a new closure scope.
-- Arrow functions cannot be used as constructors and don't have their own `arguments` object.
-- Closures can accidentally cause **memory leaks** if they hold references to large objects/DOM nodes that are never released.
+**Example (with error handling):**
+```js
+let fetchData = async () => {
+  try {
+    let response = await fetch("URL");
+    let finalData = await response.json();
+    console.log(finalData);
+  } catch (error) {
+    console.log(error);
+  }
+};
+fetchData();
+```
 
-### 🔑 Strings
-- Strings are **immutable** — `str[0] = "X"` silently does nothing (no error, no change).
-- `slice()` supports negative indexes; `substring()` does not (clamps negative to 0) — a common trap in interviews.
-- `repeat()` with a negative count throws a `RangeError` — always validate `count >= 0`.
-
-### 🔑 Loops & Async
-- A `for` loop with `var` shares one variable across all iterations — this bites people badly with `setTimeout` inside loops.
-- An empty `for(...);` (semicolon right after) is legal but creates an empty-bodied loop — easy typo to miss.
+**Interview point:** `await` only pauses the **current async function** — it does NOT freeze the whole browser/page; other code keeps running because JS is still single-threaded and using the event loop underneath (§29).
 
 ---
 
-## 23. ✅ Quick Revision Cheatsheet
+### Q24. What are the Spread and Rest operators?
 
-- JavaScript was created by **Brendan Eich** in **10 days** at Netscape (1995), originally named **Mocha**, then **LiveScript**, then **JavaScript**.
-- Standardized as **ECMAScript** by ECMA in 1997; **ES6 (2015)** was the biggest update.
-- JS is **single-threaded, dynamically typed, interpreted, synchronous, loosely typed**, and became object-oriented from **ES6+**.
-- `var` → function/global scope, redeclare & reinitialise both allowed.
-- `let` → block scope, reinitialise allowed, redeclare not allowed.
-- `const` → block scope, must declare + initialise together, cannot reassign (but contents of objects/arrays can change).
-- All three (`var`, `let`, `const`) are **hoisted**, but only `var` is initialised (`undefined`) immediately — `let`/`const` sit in the **TDZ** until their declaration line runs.
-- `==` compares value only (with type coercion); `===` compares value **and** type.
-- `null == undefined` → `true`, but `null === undefined` → `false`.
-- `NaN === NaN` → always `false`.
-- Conditional statements: `if`, `if-else`, `else-if`, nested `if`, `switch`.
-- Loops: `for` (known iterations), `while` (condition-first, unknown iterations), `do-while` (runs at least once).
-- Functions: **Normal/Named** (hoisted, has `arguments` & `this`), **Anonymous** (stored in a variable), **Arrow** (short syntax, no own `this`/`arguments`, great for callbacks).
-- **IIFE** → runs immediately once, used for private scope.
-- **HOF** → accepts and/or returns a function (`map`, `filter`, `reduce` are all HOFs).
-- **Callback** → a function passed to run later inside another function.
-- **Closure** → an inner function remembering its outer function's variables, even after the outer function has returned.
-- **Execution Context**: GEC created first → Memory phase (hoisting) → Execution phase; each function call pushes a new FEC onto the (LIFO) Call Stack.
-- Strings are **immutable** — every string method returns a new string.
-- `slice()` is the preferred way to extract substrings (supports negative indexes); `replace()` hits only the first match, `replaceAll()` hits every match.
+**Definition:** Both use `...`, but work in opposite directions (§32).
+
+**Flow diagram:**
+```
+Spread  ...  →  EXPANDS/unpacks values OUT      (used on the right-hand side)
+Rest    ...  →  COLLECTS values IN               (used on the left-hand side)
+
+let combined = [...arr1, ...arr2];         ← spread: unpack arr1, arr2 into a new array
+let [a, b, ...rest] = [1, 2, 3, 4, 5];     ← rest: collect leftovers into `rest`
+```
+
+**Example:**
+```js
+// Spread — expanding
+let arr1 = [1, 2], arr2 = [3, 4];
+let combined = [...arr1, ...arr2]; // [1, 2, 3, 4]
+
+let obj1 = { x: 1 }, obj2 = { y: 2 };
+let merged = { ...obj1, ...obj2 }; // { x: 1, y: 2 }
+
+// Rest — collecting
+let [first, ...remaining] = [10, 20, 30];
+console.log(first);     // 10
+console.log(remaining); // [20, 30]
+```
+
+**Interview point:** The rest element must always come **last** in a destructuring pattern — you can't have anything after it (§32).
+
+---
+
+### Q25. What is Destructuring?
+
+**Definition:** A concise syntax to extract values from an **array** (by position) or properties from an **object** (by matching key name), and assign them directly to variables in one line (§32).
+
+**Example:**
+```js
+// Array destructuring — order matters
+let [a, b, c] = [10, 20, 30];
+console.log(a, b, c); // 10 20 30
+
+// Object destructuring — key NAME matters, not order
+let { name, age } = { name: "Rahul", age: 22 };
+console.log(name, age); // Rahul 22
+```
+
+**Interview point:** In array destructuring, position decides which variable gets which value. In object destructuring, the variable name **must match the property key** exactly (§32).
+
+---
+
+### Q26. Shallow Copy vs Deep Copy?
+
+**Definition:** Shallow copy duplicates only the **top level** of an object/array — nested objects inside are still shared by reference. Deep copy fully isolates **every level**, including nested structures (§33).
+
+**Flow diagram:**
+```
+SHALLOW COPY:
+original = { name: "A", address: { city: "Indore" } }
+copy = { ...original }
+
+copy.name = "B"              → original.name still "A"   ✅ safe
+copy.address.city = "Bhopal" → original.address.city ALSO becomes "Bhopal"  ❌ shared!
+
+                original                    copy
+                ┌─────────┐              ┌─────────┐
+                │ name: A │              │ name: B │   ← independent
+                │ address ┼──┐        ┌──┼ address │   ← SAME object in memory!
+                └─────────┘  │        │  └─────────┘
+                              ▼        ▼
+                          { city: "Bhopal" }  ← shared reference
+
+
+DEEP COPY (via structuredClone or JSON methods):
+copy.address.city = "Bhopal" → original.address.city STAYS "Indore"  ✅ fully independent
+```
+
+**Example:**
+```js
+let original = { name: "A", address: { city: "Indore" } };
+
+let shallow = { ...original };
+shallow.address.city = "Bhopal";
+console.log(original.address.city); // "Bhopal" ❌ affected original!
+
+let deep = structuredClone(original);
+deep.address.city = "Pune";
+console.log(original.address.city); // "Indore" ✅ untouched
+```
+
+**Interview point:** `JSON.parse(JSON.stringify(obj))` is the older deep-copy trick, but it drops `undefined` values and functions and can mishandle `Date` — `structuredClone()` is the modern, safer choice (§33).
+
+---
+
+### Q27. What are the Dialog Methods?
+
+**Definition:** Browser/BOM methods for simple built-in popups that interact with the user (§24).
+
+```
+alert(message)          → shows a message, no return value, blocks until dismissed
+prompt(message, def?)   → takes text input, returns a STRING or null if cancelled
+confirm(message)        → asks yes/no, returns true (OK) or false (Cancel)
+```
+
+**Example:**
+```js
+alert("Look here!");
+
+let name = prompt("Enter your name"); // always a string, or null
+
+let ok = confirm("Are you sure?"); // true / false
+if (ok) console.log("User confirmed");
+```
+
+**Interview point:** `prompt()` **always** returns a string — if you need a number, wrap it: `Number(prompt("Enter number"))` (§24).
+
+---
+
+### Q28. What is String Interpolation?
+
+**Definition:** Using template literals (backtick strings `` ` ``) with `${expression}` syntax to embed variables/expressions directly inside a string, instead of concatenating with `+` (§34).
+
+**Example:**
+```js
+let name = "Rahul", age = 22;
+
+// old way — concatenation
+"Hello " + name + ", age " + age;
+
+// string interpolation — cleaner
+`Hello ${name}, age ${age}`;
+
+// expressions work too
+console.log(`Sum = ${10 + 20}`); // "Sum = 30"
+```
+
+**Interview point:** Template literals also support **multi-line strings** natively, without needing `\n` (§34).
+
+---
+
+### Q29. Difference between Java and JavaScript?
+
+**Definition:** Unrelated languages sharing a name for marketing reasons in 1995 (§3).
+
+| Java | JavaScript |
+|---|---|
+| Programming language | Programming **and** scripting language |
+| Strictly/statically typed | Weakly/dynamically typed |
+| Runs on the JVM | Runs in a browser or Node.js |
+| Compiled then interpreted | Interpreted |
+| Multi-threaded | Single-threaded |
+
+**Interview point:** The similar name is the #1 confusion in interviews — always clarify upfront that they are separate, unrelated languages (§3).
+
+---
+
+### Q30. What is Autoboxing?
+
+**Definition:** JavaScript automatically wraps a primitive value (string, number, boolean) in a **temporary wrapper object** whenever you call a method on it — so a plain primitive can still use built-in methods like `.toUpperCase()`. The wrapper is discarded immediately after (§34).
+
+**Flow diagram:**
+```
+"hello".toUpperCase()
+       │
+       ▼
+JS temporarily creates a String wrapper object around "hello"
+       │
+       ▼
+calls .toUpperCase() on that wrapper
+       │
+       ▼
+returns "HELLO", wrapper is discarded
+       │
+       ▼
+typeof "hello" is STILL "string" — it was never permanently boxed
+```
+
+**Example:**
+```js
+let str = "hello";
+console.log(str.toUpperCase()); // "HELLO"
+console.log(typeof str);        // "string" — still a primitive
+```
+
+**Interview point:** This is why primitives "seem" to have methods even though primitives themselves can't hold properties/methods directly (§34).
+
+---
+
+### Q31. What is GEC (Global Execution Context)?
+
+**Definition:** GEC is the base/default execution context JS creates once, automatically, the moment a script starts running — before any function is even called (§17).
+
+**Flow diagram:**
+```
+Script starts
+     │
+     ▼
+Global Execution Context (GEC) created
+     │
+     ├── Memory/Creation phase → hoist all var (=undefined) & function declarations
+     └── Execution phase       → run code top to bottom
+
+Now, every time a function is called:
+GEC ──▶ pushes a new Function Execution Context (FEC) onto the Call Stack
+     ──▶ that FEC is popped off once the function finishes/returns
+     ──▶ control goes back down to GEC
+```
+
+**Example:**
+```js
+var a = 10;                 // lives in GEC
+
+function test() {
+  let b = 20;                // lives in test()'s own FEC
+  console.log(a, b);          // test() can still see `a` from GEC
+}
+
+test();
+// Call Stack while test() runs:  GEC → test()
+// Call Stack after test() ends:  GEC
+```
+
+**Interview point:** GEC sits at the **bottom** of the call stack for the entire lifetime of the program — it's the only execution context that's never popped off (§17).
+
+---
+
+*End of notes — Fundamentals through BOM, DOM, Events, Promises, async/await, ES6 features, Node.js, Express.js, and a full trainer-style interview Q&A recap with flow diagrams.*

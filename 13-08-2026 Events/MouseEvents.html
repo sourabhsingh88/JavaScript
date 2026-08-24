@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 onclick="console.log('Hye why you clicked here')" > Mouse Events </h1>
+    <p  ondblclick="demo()" onmousemove="test()" >This is para tag</p>
+    <input type="text" name="" id="" oncontextmenu="disableRightClick()">
+     <!-- oncontextmenu=""//  will not open the menu on left click  -->
+   <script>
+     function demo()
+        {
+            console.log("Demo function called when tou double clicked");
+        }
+        function test()
+        {
+            console.log("test function called when you move the mouse ");
+        }
+        function disableRightClick(a) {
+a.preventDefault();
+        }
+// --------------------------------------------------------------------------------------
+
+        let inp = document.querySelector('input') ;
+        inp.onkeypress = (a) => {
+            console.log("key is pressed : " + a.key)
+        }
+
+        inp.onkeydown=(a) => {
+            console.log("Key is down")
+        }
+
+        inp.onkeyup=(a) => {
+            console.log("Key is up")
+        }
+
+// TECHNO ELEVATE 60% 
+// TORENHERIS // 4.5LPA JAVA
+// SOME STEPS  55PER 
+// ITNOW INC COREJAVA 1.8 MALE ONLY 
+// PLACED ELECTIVE BUSINNES SOLUTION MERN 
+
+
+
+    </script> 
+</body>
+</html>
