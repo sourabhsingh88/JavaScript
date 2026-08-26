@@ -1,4 +1,4 @@
-# JavaScript — Complete Study Notes (Fundamentals → Node.js/Express)
+# JavaScript — Complete Study Notes (Fundamentals → Node.js / Express)
 
 > Interview-ready reference. Read once, understand fully. Corrected and cleaned up from class notes.
 
